@@ -1,0 +1,31 @@
+log_out enum {
+    LOG_CONSOLE=0x01;
+    LOG_FILE=0x02;
+    LOG_NET=0x04;
+}
+
+log_lev enum {
+    LOG_VERBOSE=1;
+    LOG_DEBUG=2;
+    LOG_INFO=3;
+    LOG_WARN=4;
+    LOG_ERROR=5;
+    LOG_FATAL=6;
+}
+
+i64string = record {
+    id:i64;
+    str:string;
+}
+
+
+gearbox_log = interface +c {
+    static instance(): gearbox_log;
+    init(path:string): bool;
+    log(output:i32, lev:i32, msg:string): void
+}
+
+async_loop = interface +c {
+    static instance(): async_loop;
+    process(elapse:i64);
+}

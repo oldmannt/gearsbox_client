@@ -11,44 +11,28 @@
 
 #include "uv.h"
 #include "curl.h"
-#include <string>
-#include <functional>
+#include "IHttpRequest.h"
 
-class HttpRequest{
+namespace gearsbox {
+
+class HttpRequest:public IHttpRequest{
 public:
-    
-    typedef enum {
-        REQUEST_OK =CURLE_OK,
-    }RequestResult;
-    
-    typedef std::function<void(HttpRequest*)> ResultCallback;
-    
-    struct HTTP_RESULT {
-        HTTP_RESULT():response_code(0),result(false){}
-        bool result;
-        long response_code;
-        std::string url;
-        std::string header;
-        std::string content;
-        std::string err;
-    };
-    
     HttpRequest();
-    ~HttpRequest();
+    virtual ~HttpRequest();
     
-    int setRequestUrl(const std::string& url);
-    int setResultCallback(ResultCallback rc);
-    int setRetryTimes(int retry_times);
-    int setRequestTimeout(long time_out);
-    int setRequest(const std::string& url, ResultCallback cb, unsigned long timeout = 60000,
+    virtual int setRequestUrl(const std::string& url);
+    virtual int setResultCallback(HttpResultCallback rc);
+    virtual int setRetryTimes(int retry_times);
+    virtual int setRequestTimeout(long time_out);
+    virtual int setRequest(const std::string& url, HttpResultCallback cb, unsigned long timeout = 60000,
                    int retry_times = 0);
     
-    int setPostData(const std::string& message);
-    int setPostData(const void* data, unsigned long size);
-    int setRequestProxy(const std::string& proxy, int proxy_port);
+    virtual int setPostData(const std::string& message);
+    virtual int setPostData(const void* data, unsigned long size);
+    virtual int setRequestProxy(const std::string& proxy, int proxy_port);
     
-    int start();
-    const HTTP_RESULT& getResult() const{return m_result;}
+    virtual int start();
+    virtual const HTTP_RESULT& getResult() const{return m_result;}
     
     void handleResult(CURLMsg* message);
     size_t writeHeader(char* data, unsigned long size);
@@ -59,7 +43,7 @@ private:
     int Retry();
     unsigned long m_timeout;
     int m_retry_times;
-    ResultCallback m_callback;
+    HttpResultCallback m_callback;
     std::string m_proxy;
     int m_port;
     HTTP_RESULT m_result;
@@ -69,7 +53,7 @@ private:
 
 class HttpRequestMgr{
 public:
-    HttpRequestMgr():m_curlm_handle(0),m_init(false){};
+    HttpRequestMgr():m_init(false),m_curlm_handle(0){};
     
     static HttpRequestMgr& instance(){
         static HttpRequestMgr s_instance;
@@ -86,5 +70,5 @@ private:
     uv_timer_t m_httpuvtimeout;
 };
 
-
+}
 #endif /* HttpRequest_hpp */

@@ -9,8 +9,7 @@
 #include <stdio.h>
 #include <list>
 #include <string.h>
-#include "Interact.h"
-#include "Log.h"
+#include "ILog.h"
 
 #include "zf_log/zf_log.h"
 
@@ -211,7 +210,7 @@ static void fz_log_callback(const zf_log_message *msg, void* arg){
     
 }
 
-void g_addlog(int outputs, const char* param){
+int g_addlog(int outputs, const char* param){
     if (outputs&LOG_CONSOLE){
         g_log_info.console_cb = _zf_log_global_output.callback;
     }
@@ -220,21 +219,26 @@ void g_addlog(int outputs, const char* param){
         g_log_info.file = fopen(param, "a");
         if (!g_log_info.file){
             G_LOG_C(LOG_ERROR, "fopne file log failed:%s", param);
+            return LOG_OPENFILE_FAILED;
         }
         g_log_info.file_cb = zf_file_log;
         strncpy(g_log_info.file_path, param, sizeof(g_log_info.file_path));
     }
     
     g_log_info.outputs |= outputs;
-
+    return LOG_OK;
 }
 
-void g_loginit(int outputs, const char* param){
+int g_loginit(int outputs, const char* param){
     memset(&g_log_info, sizeof(g_log_info),0);
     g_log_info.console_cb = _zf_log_global_output.callback;
-    g_addlog(outputs, param);
-    zf_log_set_output_v(ZF_LOG_PUT_STD&(~ZF_LOG_PUT_SRC), &g_log_info, fz_log_callback);
     g_log_info.init = 1;
+    int rt = g_addlog(outputs, param);
+    if (LOG_OK != rt){
+        return rt;
+    }
+    zf_log_set_output_v(ZF_LOG_PUT_STD&(~ZF_LOG_PUT_SRC), &g_log_info, fz_log_callback);
+    return LOG_OK;
 }
 
 void g_logouts(int output, int lev, const char* msg) {

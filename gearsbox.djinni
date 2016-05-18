@@ -1,31 +1,29 @@
-log_out enum {
-    LOG_CONSOLE=0x01;
-    LOG_FILE=0x02;
-    LOG_NET=0x04;
+
+callback_http_gen = interface +j +o{
+    callback(id:i64, result:bool, data:string): bool;
 }
 
-log_lev enum {
-    LOG_VERBOSE=1;
-    LOG_DEBUG=2;
-    LOG_INFO=3;
-    LOG_WARN=4;
-    LOG_ERROR=5;
-    LOG_FATAL=6;
+http_request_gen = interface +c {
+    static create(): http_request_gen;
+    get(url:string, callback:callback_http_gen):i64;
 }
 
-i64string = record {
-    id:i64;
-    str:string;
+log_gen = interface +c {
+    const LOG_CONSOLE:i32 = 1;
+    const LOG_FILE:i32 = 2;
+    const LOG_NET:i32 = 4;
+    const LOG_VERBOSE:i32=1;
+    const LOG_DEBUG:i32=2;
+    const LOG_INFO:i32=3;
+    const LOG_WARN:i32=4;
+    const LOG_ERROR:i32=5;
+    const LOG_FATAL:i32=6;
+    static instance(): log_gen;
+    init_(output:i32,param:string): bool;
+    log(output:i32, lev:i32, msg:string);
 }
 
-
-gearbox_log = interface +c {
-    static instance(): gearbox_log;
-    init(path:string): bool;
-    log(output:i32, lev:i32, msg:string): void
-}
-
-async_loop = interface +c {
-    static instance(): async_loop;
+async_loop_gen = interface +c {
+    static instance(): async_loop_gen;
     process(elapse:i64);
 }

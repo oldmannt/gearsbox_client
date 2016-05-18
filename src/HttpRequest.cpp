@@ -8,7 +8,9 @@
 
 #include "HttpRequest.hpp"
 #include <stdlib.h>
-#include "Log.h"
+#include "ILog.h"
+
+using namespace gearsbox;
 
 typedef struct curl_context_s {
     uv_poll_t poll_handle;
@@ -255,8 +257,8 @@ int HttpRequest::Retry(){
     return m_retry_times--;
 }
 
-HttpRequest::HttpRequest():m_handle(0),m_timeout(0),m_retry_times(0),
-                        m_port(0),m_callback(0),m_post_data(0)
+HttpRequest::HttpRequest():m_timeout(0),m_handle(0),m_retry_times(0),
+                        m_callback(0),m_port(0),m_post_data(0)
 {
     HttpRequestMgr::instance().init();
     m_handle = curl_easy_init();
@@ -301,7 +303,7 @@ int HttpRequest::setRequestUrl(const std::string& url){
     return curl_code;
 }
 
-int HttpRequest::setResultCallback(HttpRequest::ResultCallback rc){
+int HttpRequest::setResultCallback(HttpResultCallback rc){
     m_callback=rc;
     return 0;
 }
@@ -321,7 +323,7 @@ int HttpRequest::setRequestTimeout(long timeout){
     return curl_code;
 }
 
-int HttpRequest::setRequest(const std::string& url, ResultCallback cb,
+int HttpRequest::setRequest(const std::string& url, HttpResultCallback cb,
                             unsigned long timeout /*= 60000*/, int retry_times /*= 0*/){
     int rt = this->setRequestUrl(url);
     if (rt != REQUEST_OK) {
@@ -386,6 +388,8 @@ int HttpRequest::setPostData(const void* data, unsigned long size){
 }
 
 int HttpRequest::setRequestProxy(const std::string& proxy, int proxy_port){
+    m_proxy = proxy;
+    m_port = proxy_port;
     CURLcode curl_code = curl_easy_setopt(m_handle, CURLOPT_PROXYPORT, proxy_port);
     if (curl_code!=CURLE_OK){
         G_LOG_FC(LOG_ERROR, "failed %s %d curl_code:%d %s",
@@ -403,4 +407,8 @@ int HttpRequest::start(){
         G_LOG_FC(LOG_ERROR, "CURLMcode:%d %s", curl_code, curl_multi_strerror(curl_code));
     }
     return curl_code;
+}
+
+IHttpRequest* IHttpRequest::create(){
+    return new HttpRequest();
 }

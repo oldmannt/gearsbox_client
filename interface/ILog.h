@@ -23,8 +23,11 @@ extern "C" {
 #define LOG_WARN    4
 #define LOG_ERROR   5
 #define LOG_FATAL   6
+    
+#define LOG_OK  0
+#define LOG_OPENFILE_FAILED 1
 
-void g_loginit(int outputs, const char* param);
+int g_loginit(int outputs, const char* param);
 void g_logout(int output, int lev, const char *const func, const char *const file, const unsigned line, const char* fmt, ...);
 void g_logouts(int output, int lev, const char* msg);
 void g_loglev(int lev);

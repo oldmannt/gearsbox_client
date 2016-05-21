@@ -21,9 +21,6 @@ bool LogImp::init_(int32_t output, const std::string & param){
 }
 
 void LogImp::log(int32_t output, int32_t lev, const std::string &msg){
-#ifdef _DEBUG || DEBUG
-    g_logouts(output, lev, "debug mode");
-#endif
     g_logouts(output, lev, msg.c_str());
 }
 

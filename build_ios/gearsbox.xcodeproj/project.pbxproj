@@ -23,13 +23,11 @@
 
 /* Begin PBXBuildFile section */
 		00CF0624105CBC4B5DE258CF /* GBLogGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD88EFF5A985DD702320798 /* GBLogGen.mm */; };
-		0204BA1BCC5BD4512B7E5FEF /* -lm in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AC3668046DB5D3711BF958 /* -lm */; };
 		020C9A1BB39ED59ED90E4210 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
 		1C678172B027EBE3620E6C55 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
 		1D1B3F91AC0101EDA680891D /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
 		20A6E9082037D272B26698EF /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
 		2AA3C5DB6DD87339F3193448 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
-		30979F2E1217F4F758F585E4 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B024B5F17C16A15105B808 /* libcurl.a */; };
 		3BA406611A99B90077C13957 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
 		4641C8949162E2FA207EDA56 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
 		4A8C49207EB7998FA8317656 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
@@ -38,7 +36,6 @@
 		51976245361F8353679A092B /* djinni_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D99C89602C21240411D71EF /* djinni_main.cpp */; };
 		54DCED9F192B677FB54D715A /* -lm in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AC3668046DB5D3711BF958 /* -lm */; };
 		60BF39E46BAFAF2089C5679F /* NativeLogGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1FF8C71CB5678D259A807 /* NativeLogGen.cpp */; };
-		6735B2358B41B4454316B0A5 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2589FD1460463CC6D7778944 /* libsqlite3.a */; };
 		6EFB8DDA0643827CE1ED2ED4 /* GBCallbackHttpGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */; };
 		77772590B197CE2D1AD63CC0 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33978AD74F5EE670A25D3FD6 /* libdjinni_objc.a */; };
 		7BCD70FE3A56C5CAD1676D54 /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
@@ -54,8 +51,6 @@
 		D20BF263DBE3159240344115 /* NativeHttpRequestGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0AB9FB2ED2A61D358A14E67 /* NativeHttpRequestGen.cpp */; };
 		D4136B7C8C7A8CC87EB08310 /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
 		D7203B0DDDC7AD6D4744A919 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5641B685BEBC5EF22E19E649 /* zf_log.c */; };
-		E7C9DCF2B46C78FA32EDBBA2 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982866CE5061AE5143B8199 /* libuv.a */; };
-		EECB7C91840BB035CEF73AC5 /* libdjinni_jni.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DD120B3698CE31FD605042 /* libdjinni_jni.a */; };
 		F0F9463D358CA7EBACC63FB8 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
 /* End PBXBuildFile section */
 
@@ -65,13 +60,6 @@
 			containerPortal = 348766758B86AF32C1471568 /* libcurl.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 939A76A22F96172735F31158;
-			remoteInfo = libcurl;
-		};
-		341FA022E9F9FEEFDE317D5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 348766758B86AF32C1471568 /* libcurl.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F3B339C557535B404B172AAE;
 			remoteInfo = libcurl;
 		};
 		3B2857FC8F52C115BEB2C58F /* PBXContainerItemProxy */ = {
@@ -94,13 +82,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = F3B339C557535B404B172AAE;
 			remoteInfo = libcurl;
-		};
-		55BD0CA210626DC1387AE310 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 178071661CB321BB5A46AC92;
-			remoteInfo = libuv;
 		};
 		7807A176D823EFA5AD9E63BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -130,25 +111,11 @@
 			remoteGlobalIDString = 071FB69F922B269428DF726B;
 			remoteInfo = gearsbox_jni;
 		};
-		C3A890A3609F308F2470950B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E8C0CF30B4F67B456B17551;
-			remoteInfo = sqlite3;
-		};
 		C413311F52EBDE3B4EA8915C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DC658C749F521B13A5BDCBBC;
-			remoteInfo = djinni_jni;
-		};
-		CD461F2DDE43BBBA309EFED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = AD97C5F2356EF26110758A40;
 			remoteInfo = djinni_jni;
 		};
 		D6D00A0AB7555FA6F75B7020 /* PBXContainerItemProxy */ = {
@@ -175,7 +142,6 @@
 		0BD7B96DD5F63C6EBE961432 /* GBCallbackHttpGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBCallbackHttpGen+Private.h"; sourceTree = "<group>"; };
 		134A721B7E989B5F590C56DA /* GBCallbackHttpGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCallbackHttpGen.h; sourceTree = "<group>"; };
 		143BA7450868C032C13F2D52 /* async_loop_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_imp.hpp; sourceTree = "<group>"; };
-		21822D23CFBCE0CD442BC2CA /* libgearsbox_jni.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libgearsbox_jni.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = log_gen.hpp; sourceTree = "<group>"; };
 		348766758B86AF32C1471568 /* libcurl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcurl.xcodeproj; path = build_ios/deps/curl/libcurl.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBAsyncLoopGen+Private.h"; sourceTree = "<group>"; };
@@ -188,6 +154,7 @@
 		6D9351837EA4F0EE9396874A /* HttpRequestImp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = HttpRequestImp.hpp; sourceTree = "<group>"; };
 		7B5A0FEDE691E299B65A0CFA /* gearsbox.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = gearsbox.gyp; sourceTree = "<group>"; };
 		7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HttpRequestImp.cpp; sourceTree = "<group>"; };
+		7C224A2A1E0B2ECA25DE398A /* libgearsbox_jni.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgearsbox_jni.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF5DC1E15696D694676BE24 /* http_request_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = http_request_gen.hpp; sourceTree = "<group>"; };
 		8179365809FCC1600F02AF3E /* async_loop_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_gen.hpp; sourceTree = "<group>"; };
 		8358D2D8C6DFD50714CC8945 /* log_gen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = log_gen.cpp; sourceTree = "<group>"; };
@@ -235,11 +202,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECB7C91840BB035CEF73AC5 /* libdjinni_jni.a in Frameworks */,
-				6735B2358B41B4454316B0A5 /* libsqlite3.a in Frameworks */,
-				30979F2E1217F4F758F585E4 /* libcurl.a in Frameworks */,
-				E7C9DCF2B46C78FA32EDBBA2 /* libuv.a in Frameworks */,
-				0204BA1BCC5BD4512B7E5FEF /* -lm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,15 +286,6 @@
 			path = zf_log;
 			sourceTree = "<group>";
 		};
-		752C8B0012A1AD097613464F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A783DAC6666A3A65883C1052 /* libgearsbox_objc.dylib */,
-				21822D23CFBCE0CD442BC2CA /* libgearsbox_jni.dylib */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8414E291725AE5FC576CD9A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,7 +308,7 @@
 				0C6571BB6B781DCC8F86152B /* Source */,
 				5259025C82A20F554A710715 /* Projects */,
 				081481181AF8D2D603138427 /* Frameworks */,
-				752C8B0012A1AD097613464F /* Products */,
+				B4B8025D6C6F87FD7E10FE97 /* Products */,
 				A85D04AFEE06F7D5D5985827 /* Build */,
 			);
 			sourceTree = "<group>";
@@ -403,6 +356,15 @@
 				DE4B118F1FA21A63EE461364 /* objc */,
 			);
 			path = "generated-src";
+			sourceTree = "<group>";
+		};
+		B4B8025D6C6F87FD7E10FE97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A783DAC6666A3A65883C1052 /* libgearsbox_objc.dylib */,
+				7C224A2A1E0B2ECA25DE398A /* libgearsbox_jni.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C661238EB821B6FE1733FDA2 /* Products */ = {
@@ -466,15 +428,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				E25DF6BB8F3E749EE9368345 /* PBXTargetDependency */,
-				FDFBEBA8546A4E4F9CC9008B /* PBXTargetDependency */,
-				24AE6B37B168C20C759BADD8 /* PBXTargetDependency */,
-				7021E3279AF2E836CBE3BC7C /* PBXTargetDependency */,
 			);
 			name = gearsbox_jni;
 			productName = gearsbox_jni;
-			productReference = 21822D23CFBCE0CD442BC2CA /* libgearsbox_jni.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
+			productReference = 7C224A2A1E0B2ECA25DE398A /* libgearsbox_jni.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		7CF4C970578FDE53A793F972 /* gearsbox_objc */ = {
 			isa = PBXNativeTarget;
@@ -627,11 +585,6 @@
 			target = 071FB69F922B269428DF726B /* gearsbox_jni */;
 			targetProxy = B1D23047857035BEC9170F3B /* PBXContainerItemProxy */;
 		};
-		24AE6B37B168C20C759BADD8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libcurl;
-			targetProxy = 341FA022E9F9FEEFDE317D5B /* PBXContainerItemProxy */;
-		};
 		3588A28653D6EE07E93EBF0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libcurl;
@@ -647,25 +600,10 @@
 			name = libuv;
 			targetProxy = 8FCFB32D6BCC7FFE93C42A20 /* PBXContainerItemProxy */;
 		};
-		7021E3279AF2E836CBE3BC7C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libuv;
-			targetProxy = 55BD0CA210626DC1387AE310 /* PBXContainerItemProxy */;
-		};
 		B8C4423E761789DAC9F60AB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = sqlite3;
 			targetProxy = D9A31A6DAD4545CFE72DA14E /* PBXContainerItemProxy */;
-		};
-		E25DF6BB8F3E749EE9368345 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = djinni_jni;
-			targetProxy = CD461F2DDE43BBBA309EFED1 /* PBXContainerItemProxy */;
-		};
-		FDFBEBA8546A4E4F9CC9008B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sqlite3;
-			targetProxy = C3A890A3609F308F2470950B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -679,6 +617,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					ZF_LOG_USE_NSLOG,
 					_LARGEFILE_SOURCE,
 					"_FILE_OFFSET_BITS=64",
 					"_DARWIN_USE_64_BIT_INODE=1",
@@ -752,7 +691,6 @@
 					"deps/djinni/support-lib/jni",
 					deps/libuv/include,
 				);
-				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
@@ -780,6 +718,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					ZF_LOG_USE_NSLOG,
 					_LARGEFILE_SOURCE,
 					"_FILE_OFFSET_BITS=64",
 					"_DARWIN_USE_64_BIT_INODE=1",
@@ -832,7 +771,6 @@
 					"deps/djinni/support-lib/jni",
 					deps/libuv/include,
 				);
-				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
 				PRODUCT_NAME = gearsbox_jni;

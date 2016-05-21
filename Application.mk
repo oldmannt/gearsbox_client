@@ -7,5 +7,5 @@ APP_PLATFORM := android-19
 NDK_TOOLCHAIN_VERSION = 4.9
 # GNU libc++ is the only Android STL which supports C++11 features
 APP_STL := gnustl_shared
-APP_BUILD_SCRIPT := ../GypAndroid.mk
+APP_BUILD_SCRIPT := GypAndroid.mk
 APP_MODULES := gearsbox_jni

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "071FB69F922B269428DF726B"
-               BuildableName = "libgearsbox_jni.dylib"
+               BuildableName = "libgearsbox_jni.a"
                BlueprintName = "gearsbox_jni"
                ReferencedContainer = "container:build_ios/gearsbox.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "071FB69F922B269428DF726B"
-            BuildableName = "libgearsbox_jni.dylib"
+            BuildableName = "libgearsbox_jni.a"
             BlueprintName = "gearsbox_jni"
             ReferencedContainer = "container:build_ios/gearsbox.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "071FB69F922B269428DF726B"
-            BuildableName = "libgearsbox_jni.dylib"
+            BuildableName = "libgearsbox_jni.a"
             BlueprintName = "gearsbox_jni"
             ReferencedContainer = "container:build_ios/gearsbox.xcodeproj">
          </BuildableReference>

@@ -27,7 +27,7 @@ clean_ios:
 		-sdk iphonesimulator clean
 
 clean_android:
-	-rm -f GypAndroid.mk
+	#-rm -f GypAndroid.mk
 	-rm -rf project_android/testgearsbox/build
 	-rm -rf project_android/testgearsbox/app/build
 

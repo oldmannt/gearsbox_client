@@ -36,8 +36,8 @@ HttpRequestImp::~HttpRequestImp(){
 
 int64_t HttpRequestImp::get(const std::string &url, const std::shared_ptr<CallbackHttpGen> &callback){
     m_stay = shared_from_this();
-    if (!m_callback){
-        G_LOG_FC(LOG_ERROR,"gen http request callback null");
+    if (nullptr ==callback){
+        G_LOG_FC(LOG_ERROR,"gen http request callback null %lx", callback.get());
         remove_request(m_stay);
         return 0;
     }

@@ -233,7 +233,8 @@ void HttpRequest::handleResult(CURLMsg* message){
         const char* err_string = curl_easy_strerror(message->data.result);
         m_result.err = err_string;
         m_result.result = false;
-        
+
+        G_LOG_FC(LOG_ERROR, "request failed err:%s", err_string);
         if (this->Retry()>0)
             return;
     }
@@ -248,7 +249,8 @@ int HttpRequest::Retry(){
     if (m_retry_times <= 0) {
         return 0;
     }
-    
+
+    G_LOG_FC(LOG_INFO, "request retry %s", this->m_result.url.c_str());
     m_result.header = "";
     m_result.content = "";
     m_result.err = "";

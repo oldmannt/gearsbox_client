@@ -20,11 +20,14 @@
         "./generated-src/cpp",
         "./src",
         "./interface",
-      ]
+      ],
+      "defines": [
+        'ZF_LOG_USE_NSLOG',
+      ],
     },
     {
       "target_name": "gearsbox_jni",
-      "type": "shared_library",
+      "type": "static_library",
       "dependencies": [
         "./deps/djinni/support-lib/support_lib.gyp:djinni_jni",
         "./deps/sqlite3/sqlite3.gyp:sqlite3",

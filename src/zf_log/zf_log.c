@@ -8,7 +8,6 @@
 	#if defined(__ANDROID__)
 		#define ZF_LOG_USE_ANDROID_LOG 1
 	#else
-		#define ZF_LOG_USE_ANDROID_LOG 0
 	#endif
 #else
 	#define ZF_LOG_USE_ANDROID_LOG 0
@@ -284,12 +283,12 @@ static INSTRUMENTED_CONST buffer_cb g_buffer_cb = buffer_callback;
 	{
 		VAR_UNUSED(arg);
 		*msg->p = 0;
-		const char *tag = msg->p;
-		if (msg->tag_e != msg->tag_b)
+		const char *tag = msg->tag?msg->tag:"ZFCPP";
+		/*if (msg->tag_e != msg->tag_b)
 		{
 			tag = msg->tag_b;
 			*msg->tag_e = 0;
-		}
+		}*/
 		__android_log_print(android_lvl(msg->lvl), tag, "%s", msg->msg_b);
 	}
 

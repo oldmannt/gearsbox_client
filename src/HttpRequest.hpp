@@ -10,7 +10,7 @@
 #define HttpRequest_hpp
 
 #include "uv.h"
-#include "curl.h"
+#include "curl/curl.h"
 #include "IHttpRequest.h"
 
 namespace gearsbox {

@@ -1,0 +1,155 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "23.0.3"
+
+        defaultConfig.with {
+            applicationId "fun.dyno.gearsbox"
+            minSdkVersion.apiLevel 15
+            targetSdkVersion.apiLevel 23
+            versionCode 1
+            versionName "1.0"
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles.add(file("proguard-rules.pro"))
+            }
+        }
+
+        productFlavors {
+
+            create("x86-64") {
+                ndk.abiFilters.add("x86_64")
+            }
+
+            //create("arm7") {
+            //    ndk.abiFilters.add("armeabi-v7a")
+            //}
+
+            //create("fat")
+        }
+
+        /*
+        productFlavors {
+            // for detailed abiFilter descriptions, refer to "Supported ABIs" @
+            // https://developer.android.com/ndk/guides/abis.html#sa
+            create("arm") {
+                ndk.abiFilters.add("armeabi")
+            }
+            create("arm7") {
+                ndk.abiFilters.add("armeabi-v7a")
+            }
+            create("arm8") {
+                ndk.abiFilters.add("arm64-v8a")
+            }
+            create("x86") {
+                ndk.abiFilters.add("x86")
+            }
+            create("x86-64") {
+                ndk.abiFilters.add("x86_64")
+            }
+            create("mips") {
+                ndk.abiFilters.add("mips")
+            }
+            create("mips-64") {
+                ndk.abiFilters.add("mips64")
+            }
+            // To include all cpu architectures, leaves abiFilters empty
+            create("all")
+        }
+        */
+
+
+
+        sources {
+            main {
+                jni {
+                    source {
+
+                        srcDirs = [
+                                "../../../deps/djinni/support-lib/jni",
+                                "../../../generated-src",
+                                "../../../deps/sqlite3",
+                                "../../../deps/curl",
+                                "../../../deps/libuv",
+                                "../../../src",
+                        ]
+
+                        exclude "**/generated-src/java/*.java"
+                        exclude "**/generated-src/objc/*.h"
+                        exclude "**/generated-src/objc/*.mm"
+                        exclude '**/win/*.c'
+                        exclude '**/unix/aix.c'
+                        exclude '**/unix/darwin.c'
+                        exclude '**/unix/freebsd.c'
+                        exclude '**/unix/fsevents.c'
+                        exclude '**/unix/kqueue.c'
+                        exclude '**/unix/netbsd.c'
+                        exclude '**/unix/openbsd.c'
+                        exclude '**/unix/sunos.c'
+                        exclude '**/unix/darwin-proctitle.c'
+
+                    }
+                }// jni
+
+                java {
+                    source {
+                        srcDirs = [
+                                "../../../generated-src/java",
+                                "src/main/java"
+                        ]
+                    }
+                }// java
+            }
+        }// sources
+
+        ndk {
+            toolchain = "gcc"
+            toolchainVersion = "4.9"
+            moduleName = "gearsbox_jni"
+            stl = "gnustl_shared"
+
+            ldLibs.addAll(['android', 'log', 'dl'])
+
+            CFlags.add("-std=c11")
+            cppFlags.add("-std=c++11")
+            cppFlags.add("-fexceptions")
+            cppFlags.add("-frtti")
+            cppFlags.add("-D_GLIBCXX_HAS_GTHREADS")
+            CFlags.add("-DZF_LOG_USE_ANDROID_LOG")
+
+            cppFlags.add("-I${file("../../../deps/djinni/support-lib")}".toString())
+            cppFlags.add("-I${file("../../../deps/djinni/support-lib/jni")}".toString())        // djinni src
+            cppFlags.add("-I${file("../../../generated-src/cpp")}".toString())               // app generated-src
+            cppFlags.add("-I${file("../../../generated-src/jni")}".toString())                   // app generated-src
+            cppFlags.add("-I${file("../../../deps/curl")}".toString())
+            cppFlags.add("-I${file("../../../deps/libuv/include")}".toString())
+            cppFlags.add("-I${file("../../../deps/libuv/src")}".toString())
+            cppFlags.add("-I${file("../../../deps/sqlite3")}".toString())
+            cppFlags.add("-I${file("../../../src")}".toString())
+            cppFlags.add("-I${file("../../../interface")}".toString())
+
+            CFlags.add("-I${file("../../../deps/djinni/support-lib")}".toString())
+            CFlags.add("-I${file("../../../deps/djinni/support-lib/jni")}".toString())        // djinni src
+            CFlags.add("-I${file("../../../generated-src/cpp")}".toString())               // app generated-src
+            CFlags.add("-I${file("../../../generated-src/jni")}".toString())                   // app generated-src
+            CFlags.add("-I${file("../../../deps/curl")}".toString())
+            CFlags.add("-I${file("../../../deps/libuv/include")}".toString())
+            CFlags.add("-I${file("../../../deps/libuv/src")}".toString())
+            CFlags.add("-I${file("../../../deps/sqlite3")}".toString())
+            CFlags.add("-I${file("../../../src")}".toString())
+            CFlags.add("-I${file("../../../interface")}".toString())
+
+        }
+    }// android
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}

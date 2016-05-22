@@ -21,6 +21,12 @@
         "./src",
         "./interface",
       ],
+      'all_dependent_settings': {
+        'include_dirs': [
+          './generated-src/objc',
+          "./interface",
+        ]
+      },
       "defines": [
         'ZF_LOG_USE_NSLOG',
       ],
@@ -47,6 +53,14 @@
         "src",
         "./interface",
       ],
+      "defines": [
+        'ZF_LOG_USE_ANDROID_LOG',
+      ],
+      'all_dependent_settings': {
+        'include_dirs': [
+          "./interface",
+        ]
+      },
     },
   ],
 }

@@ -11,6 +11,7 @@
 
 #include <string>
 #include <functional>
+#include <memory>
 
 namespace gearsbox {
 
@@ -19,7 +20,7 @@ typedef enum {
 }RequestResult;
 
 class IHttpRequest;
-typedef std::function<void(IHttpRequest*)> HttpResultCallback;
+    typedef std::function<void(std::shared_ptr<IHttpRequest>)> HttpResultCallback;
 
 struct HTTP_RESULT {
     HTTP_RESULT():result(false),response_code(0){}
@@ -34,7 +35,7 @@ struct HTTP_RESULT {
 
 class IHttpRequest {
 public:
-    static IHttpRequest* create();
+    static std::shared_ptr<IHttpRequest> create();
     virtual~ IHttpRequest(){};
     virtual int setRequestUrl(const std::string& url) = 0;
     virtual int setResultCallback(HttpResultCallback rc) = 0;

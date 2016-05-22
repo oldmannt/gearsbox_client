@@ -23,18 +23,18 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	deps/djinni/support-lib/jni/djinni_main.cpp \
-	generated-src/jni/NativeAsyncLoopGen.cpp \
-	generated-src/jni/NativeCallbackHttpGen.cpp \
-	generated-src/jni/NativeHttpRequestGen.cpp \
-	generated-src/jni/NativeLogGen.cpp \
-	generated-src/cpp/log_gen.cpp \
-	src/async_loop_imp.cpp \
-	src/HttpRequest.cpp \
-	src/HttpRequestImp.cpp \
-	src/Log.cpp \
-	src/log_imp.cpp \
-	src/json/jsoncpp.cpp
+	gearsbox/deps/djinni/support-lib/jni/djinni_main.cpp \
+	gearsbox/generated-src/jni/NativeAsyncLoopGen.cpp \
+	gearsbox/generated-src/jni/NativeCallbackHttpGen.cpp \
+	gearsbox/generated-src/jni/NativeHttpRequestGen.cpp \
+	gearsbox/generated-src/jni/NativeLogGen.cpp \
+	gearsbox/generated-src/cpp/log_gen.cpp \
+	gearsbox/src/async_loop_imp.cpp \
+	gearsbox/src/HttpRequest.cpp \
+	gearsbox/src/HttpRequestImp.cpp \
+	gearsbox/src/Log.cpp \
+	gearsbox/src/log_imp.cpp \
+	gearsbox/src/json/jsoncpp.cpp
 
 
 # Flags passed to both C and C++ files.
@@ -49,6 +49,7 @@ MY_CFLAGS_Debug := \
 	-DDEBUG=1
 
 MY_DEFS_Debug := \
+	'-DZF_LOG_USE_ANDROID_LOG' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DDEBUG=1'
@@ -56,15 +57,15 @@ MY_DEFS_Debug := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
-	$(LOCAL_PATH)/generated-src/jni \
-	$(LOCAL_PATH)/generated-src/cpp \
-	$(LOCAL_PATH)/src \
-	$(LOCAL_PATH)/interface \
-	$(LOCAL_PATH)/deps/sqlite3 \
-	$(LOCAL_PATH)/deps/curl \
-	$(LOCAL_PATH)/deps/curl/curl \
-	$(LOCAL_PATH)/deps/djinni/support-lib/jni \
-	$(LOCAL_PATH)/deps/libuv/include
+	$(LOCAL_PATH)/gearsbox/generated-src/jni \
+	$(LOCAL_PATH)/gearsbox/generated-src/cpp \
+	$(LOCAL_PATH)/gearsbox/src \
+	$(LOCAL_PATH)/gearsbox/interface \
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
+	$(LOCAL_PATH)/gearsbox/deps/curl \
+	$(LOCAL_PATH)/gearsbox/deps/curl/curl \
+	$(LOCAL_PATH)/gearsbox/deps/djinni/support-lib/jni \
+	$(LOCAL_PATH)/gearsbox/deps/libuv/include
 
 
 # Flags passed to only C++ (and not C) files.
@@ -89,6 +90,7 @@ MY_CFLAGS_Release := \
 	-DNDEBUG=1
 
 MY_DEFS_Release := \
+	'-DZF_LOG_USE_ANDROID_LOG' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DNDEBUG=1'
@@ -96,15 +98,15 @@ MY_DEFS_Release := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
-	$(LOCAL_PATH)/generated-src/jni \
-	$(LOCAL_PATH)/generated-src/cpp \
-	$(LOCAL_PATH)/src \
-	$(LOCAL_PATH)/interface \
-	$(LOCAL_PATH)/deps/sqlite3 \
-	$(LOCAL_PATH)/deps/curl \
-	$(LOCAL_PATH)/deps/curl/curl \
-	$(LOCAL_PATH)/deps/djinni/support-lib/jni \
-	$(LOCAL_PATH)/deps/libuv/include
+	$(LOCAL_PATH)/gearsbox/generated-src/jni \
+	$(LOCAL_PATH)/gearsbox/generated-src/cpp \
+	$(LOCAL_PATH)/gearsbox/src \
+	$(LOCAL_PATH)/gearsbox/interface \
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
+	$(LOCAL_PATH)/gearsbox/deps/curl \
+	$(LOCAL_PATH)/gearsbox/deps/curl/curl \
+	$(LOCAL_PATH)/gearsbox/deps/djinni/support-lib/jni \
+	$(LOCAL_PATH)/gearsbox/deps/libuv/include
 
 
 # Flags passed to only C++ (and not C) files.

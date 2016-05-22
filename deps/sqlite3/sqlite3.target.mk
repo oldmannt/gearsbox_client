@@ -23,7 +23,7 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	deps/sqlite3/sqlite3.c
+	gearsbox/deps/sqlite3/sqlite3.c
 
 
 # Flags passed to both C and C++ files.
@@ -47,8 +47,8 @@ MY_DEFS_Debug := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
-	$(LOCAL_PATH)/deps/sqlite3 \
-	$(LOCAL_PATH)/deps/sqlite3/sqlite3
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3/sqlite3
 
 
 # Flags passed to only C++ (and not C) files.
@@ -82,8 +82,8 @@ MY_DEFS_Release := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
-	$(LOCAL_PATH)/deps/sqlite3 \
-	$(LOCAL_PATH)/deps/sqlite3/sqlite3
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
+	$(LOCAL_PATH)/gearsbox/deps/sqlite3/sqlite3
 
 
 # Flags passed to only C++ (and not C) files.

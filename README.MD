@@ -20,9 +20,28 @@ the third party codes and utilities used in projects
 this should be a sub folder in clent project, I will modify USNIT as as sample  
 
 1. add gearsbox to clent, in root of client directory run the command below
+
 	git submodule add https://github.com/oldmannt/gearsbox_client.git gearsbox
+
+update the submodule of gearsbox
+
+	cd gearsbox
+	git submodule init
+	git submodule update
+
 2. create client.djinni, client.gyp, run_djinni.sh in clent
-1. create xcworkspace in ios
+	
+	#generate the bridge code and project
+	make ios_proj
+	make android_proj
+
+3. create client.xcworkspace in ios
+	open client.xcworkspace, add client.xcodeproj
+
+4. create ios applicaton project, and add to the xcworkspace
+	build and test
+
+
 
 .####more infomation  
 http://ph0b.com/android-studio-gradle-and-ndk-integration/

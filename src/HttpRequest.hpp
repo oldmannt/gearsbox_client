@@ -9,13 +9,14 @@
 #ifndef HttpRequest_hpp
 #define HttpRequest_hpp
 
+#include <map>
 #include "uv.h"
 #include "curl/curl.h"
 #include "IHttpRequest.h"
 
 namespace gearsbox {
 
-class HttpRequest:public IHttpRequest{
+class HttpRequest:public IHttpRequest, public std::enable_shared_from_this<IHttpRequest>{
 public:
     HttpRequest();
     virtual ~HttpRequest();
@@ -50,7 +51,8 @@ private:
     char*  m_post_data;
     CURL* m_handle;
 };
-
+    
+typedef std::map<IHttpRequest*, std::shared_ptr<IHttpRequest>> MAP_PTR_REQUEST;
 class HttpRequestMgr{
 public:
     HttpRequestMgr():m_init(false),m_curlm_handle(0){};
@@ -64,10 +66,16 @@ public:
     uv_timer_t* getUVTimer(){return &m_httpuvtimeout;}
     CURLM* getCurlm(){ return m_curlm_handle;}
     
+    bool addHttpRequest(std::shared_ptr<IHttpRequest> request_ptr);
+    bool removeHttpRequest(IHttpRequest* request_raw);
+    bool removeHttpRequest(std::shared_ptr<IHttpRequest>);
+    
 private:
     bool m_init;
     CURLM * m_curlm_handle;
     uv_timer_t m_httpuvtimeout;
+    
+    MAP_PTR_REQUEST m_living_request;
 };
 
 }

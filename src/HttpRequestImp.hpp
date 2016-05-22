@@ -14,7 +14,7 @@
 
 namespace gearsbox {
 
-class HttpRequestImp: public HttpRequestGen, public std::enable_shared_from_this<HttpRequestImp>{
+class HttpRequestImp: public HttpRequestGen{
 public:
     HttpRequestImp();
     virtual ~HttpRequestImp();
@@ -23,7 +23,7 @@ public:
     void HttpResult(IHttpRequest* result);
 private:
     std::shared_ptr<CallbackHttpGen> m_callback;
-    std::shared_ptr<HttpRequestImp> m_stay;
+    std::shared_ptr<IHttpRequest> m_request_ptr;
 };
     
 }

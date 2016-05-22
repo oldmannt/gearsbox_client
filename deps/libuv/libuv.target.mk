@@ -23,36 +23,36 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	deps/libuv/src/fs-poll.c \
-	deps/libuv/src/inet.c \
-	deps/libuv/src/threadpool.c \
-	deps/libuv/src/uv-common.c \
-	deps/libuv/src/version.c \
-	deps/libuv/src/unix/async.c \
-	deps/libuv/src/unix/core.c \
-	deps/libuv/src/unix/dl.c \
-	deps/libuv/src/unix/fs.c \
-	deps/libuv/src/unix/getaddrinfo.c \
-	deps/libuv/src/unix/getnameinfo.c \
-	deps/libuv/src/unix/loop.c \
-	deps/libuv/src/unix/loop-watcher.c \
-	deps/libuv/src/unix/pipe.c \
-	deps/libuv/src/unix/poll.c \
-	deps/libuv/src/unix/process.c \
-	deps/libuv/src/unix/signal.c \
-	deps/libuv/src/unix/stream.c \
-	deps/libuv/src/unix/tcp.c \
-	deps/libuv/src/unix/thread.c \
-	deps/libuv/src/unix/timer.c \
-	deps/libuv/src/unix/tty.c \
-	deps/libuv/src/unix/udp.c \
-	deps/libuv/src/unix/proctitle.c \
-	deps/libuv/src/unix/linux-core.c \
-	deps/libuv/src/unix/linux-inotify.c \
-	deps/libuv/src/unix/linux-syscalls.c \
-	deps/libuv/src/unix/pthread-fixes.c \
-	deps/libuv/src/unix/android-ifaddrs.c \
-	deps/libuv/src/unix/pthread-barrier.c
+	gearsbox/deps/libuv/src/fs-poll.c \
+	gearsbox/deps/libuv/src/inet.c \
+	gearsbox/deps/libuv/src/threadpool.c \
+	gearsbox/deps/libuv/src/uv-common.c \
+	gearsbox/deps/libuv/src/version.c \
+	gearsbox/deps/libuv/src/unix/async.c \
+	gearsbox/deps/libuv/src/unix/core.c \
+	gearsbox/deps/libuv/src/unix/dl.c \
+	gearsbox/deps/libuv/src/unix/fs.c \
+	gearsbox/deps/libuv/src/unix/getaddrinfo.c \
+	gearsbox/deps/libuv/src/unix/getnameinfo.c \
+	gearsbox/deps/libuv/src/unix/loop.c \
+	gearsbox/deps/libuv/src/unix/loop-watcher.c \
+	gearsbox/deps/libuv/src/unix/pipe.c \
+	gearsbox/deps/libuv/src/unix/poll.c \
+	gearsbox/deps/libuv/src/unix/process.c \
+	gearsbox/deps/libuv/src/unix/signal.c \
+	gearsbox/deps/libuv/src/unix/stream.c \
+	gearsbox/deps/libuv/src/unix/tcp.c \
+	gearsbox/deps/libuv/src/unix/thread.c \
+	gearsbox/deps/libuv/src/unix/timer.c \
+	gearsbox/deps/libuv/src/unix/tty.c \
+	gearsbox/deps/libuv/src/unix/udp.c \
+	gearsbox/deps/libuv/src/unix/proctitle.c \
+	gearsbox/deps/libuv/src/unix/linux-core.c \
+	gearsbox/deps/libuv/src/unix/linux-inotify.c \
+	gearsbox/deps/libuv/src/unix/linux-syscalls.c \
+	gearsbox/deps/libuv/src/unix/pthread-fixes.c \
+	gearsbox/deps/libuv/src/unix/android-ifaddrs.c \
+	gearsbox/deps/libuv/src/unix/pthread-barrier.c
 
 
 # Flags passed to both C and C++ files.
@@ -82,8 +82,8 @@ MY_DEFS_Debug := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Debug := \
-	$(LOCAL_PATH)/deps/libuv/include \
-	$(LOCAL_PATH)/deps/libuv/src
+	$(LOCAL_PATH)/gearsbox/deps/libuv/include \
+	$(LOCAL_PATH)/gearsbox/deps/libuv/src
 
 
 # Flags passed to only C++ (and not C) files.
@@ -123,8 +123,8 @@ MY_DEFS_Release := \
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES_Release := \
-	$(LOCAL_PATH)/deps/libuv/include \
-	$(LOCAL_PATH)/deps/libuv/src
+	$(LOCAL_PATH)/gearsbox/deps/libuv/include \
+	$(LOCAL_PATH)/gearsbox/deps/libuv/src
 
 
 # Flags passed to only C++ (and not C) files.

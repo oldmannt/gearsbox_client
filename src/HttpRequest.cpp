@@ -61,8 +61,7 @@ void curl_perform(uv_poll_t *req, int status, int events)
     
     context = (curl_context_t *) req;
     
-    curl_multi_socket_action(HttpRequestMgr::instance().getCurlm(), context->sockfd, flags,
-                             &running_handles);
+    curl_multi_socket_action(HttpRequestMgr::instance().getCurlm(), context->sockfd, flags, &running_handles);
     
     check_multi_info();
 }
@@ -70,8 +69,7 @@ void curl_perform(uv_poll_t *req, int status, int events)
 void on_timeout(uv_timer_t *req)
 {
     int running_handles;
-    curl_multi_socket_action(HttpRequestMgr::instance().getCurlm(), CURL_SOCKET_TIMEOUT, 0,
-                             &running_handles);
+    curl_multi_socket_action(HttpRequestMgr::instance().getCurlm(), CURL_SOCKET_TIMEOUT, 0, &running_handles);
     check_multi_info();
 }
 
@@ -199,6 +197,11 @@ size_t RetriveContentFunction(char *ptr, size_t size, size_t nmemb, void *userda
 void HttpRequest::cleanUP(){
     if (m_handle == 0)
         return;
+    CURLcode curl_code = curl_easy_setopt(m_handle, CURLOPT_PRIVATE, 0);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_PRIVATE clean failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+
     curl_multi_remove_handle(HttpRequestMgr::instance().getCurlm(), m_handle);
     curl_easy_cleanup(m_handle);
     m_handle = 0;
@@ -225,6 +228,10 @@ void HttpRequest::handleResult(CURLMsg* message){
     if (curl_code!=CURLE_OK){
         G_LOG_FC(LOG_ERROR, "CURLINFO_RESPONSE_CODE failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
     }
+    CURLMcode curl_mcode = curl_multi_remove_handle(HttpRequestMgr::instance().getCurlm(), m_handle);
+    if (curl_code!=CURLM_OK){
+        G_LOG_FC(LOG_ERROR, "curl_multi_remove_handle err CURLMcode:%d %s", curl_code, curl_multi_strerror(curl_mcode));
+    }
     
     if (message->data.result == CURLE_OK && m_result.response_code == 200) {
         m_result.result = true;
@@ -239,9 +246,9 @@ void HttpRequest::handleResult(CURLMsg* message){
             return;
     }
     
-    this->cleanUP();
+    //this->cleanUP();
     if (m_callback){
-        m_callback(this);
+        m_callback(shared_from_this());
     }
 }
 
@@ -264,31 +271,6 @@ HttpRequest::HttpRequest():m_timeout(0),m_handle(0),m_retry_times(0),
 {
     HttpRequestMgr::instance().init();
     m_handle = curl_easy_init();
-    
-    CURLcode curl_code = curl_easy_setopt(m_handle, CURLOPT_HEADERFUNCTION, RetriveHeaderFunction);
-    if (curl_code!=CURLE_OK){
-        G_LOG_FC(LOG_ERROR, "CURLOPT_HEADERFUNCTION failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
-    }
-
-    curl_code = curl_easy_setopt(m_handle, CURLOPT_HEADERDATA, &m_result.header);
-    if (curl_code!=CURLE_OK){
-        G_LOG_FC(LOG_ERROR, "CURLOPT_HEADERDATA failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
-    }
-    
-    curl_code = curl_easy_setopt(m_handle, CURLOPT_WRITEFUNCTION, RetriveContentFunction);
-    if (curl_code!=CURLE_OK){
-        G_LOG_FC(LOG_ERROR, "CURLOPT_WRITEFUNCTION failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
-    }
-    
-    curl_code = curl_easy_setopt(m_handle, CURLOPT_WRITEDATA, &m_result.content);
-    if (curl_code!=CURLE_OK){
-        G_LOG_FC(LOG_ERROR, "CURLOPT_WRITEDATA failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
-    }
-    
-    curl_code = curl_easy_setopt(m_handle, CURLOPT_PRIVATE, this);
-    if (curl_code!=CURLE_OK){
-        G_LOG_FC(LOG_ERROR, "CURLOPT_PRIVATE failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
-    }
 };
 
 HttpRequest::~HttpRequest(){
@@ -406,11 +388,12 @@ int HttpRequest::setRequestProxy(const std::string& proxy, int proxy_port){
 int HttpRequest::start(){
     CURLMcode curl_code = curl_multi_add_handle(HttpRequestMgr::instance().getCurlm(), m_handle);
     if (curl_code!=CURLM_OK){
-        G_LOG_FC(LOG_ERROR, "CURLMcode:%d %s", curl_code, curl_multi_strerror(curl_code));
+        G_LOG_FC(LOG_ERROR, "curl_multi_add_handle CURLMcode:%d %s", curl_code, curl_multi_strerror(curl_code));
     }
     return curl_code;
 }
 
-IHttpRequest* IHttpRequest::create(){
-    return new HttpRequest();
+std::shared_ptr<IHttpRequest>  IHttpRequest::create(){
+    std::shared_ptr<IHttpRequest> newone = std::make_shared<HttpRequest>();
+    return newone;
 }

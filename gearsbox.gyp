@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "gearsbox_objc",
-      "type": "shared_library",
+      "type": "static_library",
       "dependencies": [
         "./deps/djinni/support-lib/support_lib.gyp:djinni_objc",
         "./deps/sqlite3/sqlite3.gyp:sqlite3",

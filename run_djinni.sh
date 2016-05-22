@@ -5,6 +5,7 @@ cpp_out="$base_dir/generated-src/cpp"
 jni_out="$base_dir/generated-src/jni"
 objc_out="$base_dir/generated-src/objc"
 java_out="$base_dir/generated-src/java/dyno/fun/gearsbox"
+yaml_out="$base_dir/generated-src/yaml" 
 java_package="dyno.fun.gearsbox"
 namespace="gearsbox"
 objc_prefix="GB"
@@ -26,5 +27,9 @@ deps/djinni/src/run \
    --objc-type-prefix $objc_prefix \
    \
    --objcpp-out $objc_out \
+   \
+   --yaml-out "$yaml_out/yaml" \
+   --yaml-out-file "yaml-gearsbox.yaml" \
+   --yaml-prefix "gb_" \
    \
    --idl $djinni_file

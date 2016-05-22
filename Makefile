@@ -1,18 +1,18 @@
-./build_ios/gearsbox.xcodeproj: gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp gearsbox.djinni
+ios_proj: gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp gearsbox.djinni
 	sh ./run_djinni.sh
 	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./gearsbox.gyp
 
-ios: ./build_ios/gearsbox.xcodeproj
+ios: ios_proj
 	xcodebuild -workspace ios_project/djinni_sqlite.xcworkspace \
 		-scheme gearsbox \
 		-configuration 'Debug' \
 		-sdk iphonesimulator
 
-GypAndroid.mk: gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp gearsbox.djinni
+android_proj: gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp gearsbox.djinni
 	sh ./run_djinni.sh
 	ANDROID_BUILD_TOP=$(shell dirname `which ndk-build`) deps/gyp/gyp --depth=. -f android -DOS=android -Ideps/djinni/common.gypi ./gearsbox.gyp --root-target=gearsbox_jni
 
-android: GypAndroid.mk
+android: android_proj
 	#cd project_android/testgearsbox/ && ./gradlew app:assembleDebug 
 	cd project_android/testgearsbox/ && ./gradlew app:assembleRelease 
 	@echo "Apks produced at:"

@@ -185,10 +185,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 08984CD2B82F63EF40B009D4 /* Build configuration list for PBXProject "support_lib" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0FFDE03E1D942ADADB44E055;
 			projectDirPath = "../../../../deps/djinni/support-lib";
 			projectRoot = "";
@@ -257,7 +262,9 @@
 		0F731F663BCC53B7ADFEB752 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				ONLY_ACTIVE_ARCH = YES;
 				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
 			};
 			name = Debug;

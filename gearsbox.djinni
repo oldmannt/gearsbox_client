@@ -19,7 +19,7 @@ log_gen = interface +c {
     const LOG_ERROR:i32=5;
     const LOG_FATAL:i32=6;
     static instance(): log_gen;
-    init_(output:i32,param:string): bool;
+    initialize(output:i32,param:string): bool;
     log(output:i32, lev:i32, msg:string);
 }
 

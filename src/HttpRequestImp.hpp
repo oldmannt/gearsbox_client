@@ -20,7 +20,7 @@ public:
     virtual ~HttpRequestImp();
     virtual int64_t get(const std::string & url, const std::shared_ptr<CallbackHttpGen> & callback);
     
-    void HttpResult(IHttpRequest* result);
+    void HttpResult(std::shared_ptr<IHttpRequest> result);
 private:
     std::shared_ptr<CallbackHttpGen> m_callback;
     std::shared_ptr<IHttpRequest> m_request_ptr;

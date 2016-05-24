@@ -41,6 +41,12 @@ update the submodule of gearsbox
 4. create ios applicaton project, and add to the xcworkspace
 	build and test
 
+5. create a android studio project in android/usnit
+	use gradle-experimental builed client_jni.so
+	config build.gradle, app/build.gradle gradle/wrapper/gradle-wrapper.properties
+	build and test
+
+6. make
 
 
 .####more infomation  

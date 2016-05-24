@@ -21,7 +21,7 @@ android: android_proj
 gearsbox: ./build_ios/gearsbox.xcodeproj
 
 clean_ios:
-	-rm -rf build_ios
+	#-rm -rf build_ios
 	-xcodebuild -workspace ios_project/djinni_sqlite.xcworkspace \
 		-scheme gearsbox \
 		-configuration 'Debug' \

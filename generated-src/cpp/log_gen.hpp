@@ -33,7 +33,7 @@ public:
 
     static std::shared_ptr<LogGen> instance();
 
-    virtual bool init_(int32_t output, const std::string & param) = 0;
+    virtual bool initialize(int32_t output, const std::string & param) = 0;
 
     virtual void log(int32_t output, int32_t lev, const std::string & msg) = 0;
 };

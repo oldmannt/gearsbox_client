@@ -428,10 +428,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = ED00F7AE0DE7EACE26A5E494 /* Build configuration list for PBXProject "libcurl" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 9EAFF02C396E10C5D8CC99AE;
 			projectDirPath = ../../../deps/curl;
 			projectRoot = "";
@@ -577,7 +582,9 @@
 		CE864DE5C75FF92996E9A2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				ONLY_ACTIVE_ARCH = YES;
 				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
 			};
 			name = Debug;

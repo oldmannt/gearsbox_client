@@ -14,7 +14,7 @@
 namespace gearsbox {
     class LogImp: public LogGen{
         
-        virtual bool init_(int32_t output, const std::string & param);
+        virtual bool initialize(int32_t output, const std::string & param);
         virtual void log(int32_t output, int32_t lev, const std::string & msg);
     };
 }

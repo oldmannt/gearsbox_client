@@ -22,88 +22,34 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		00CF0624105CBC4B5DE258CF /* GBLogGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD88EFF5A985DD702320798 /* GBLogGen.mm */; };
-		020C9A1BB39ED59ED90E4210 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
-		1C678172B027EBE3620E6C55 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
-		1D1B3F91AC0101EDA680891D /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
-		20A6E9082037D272B26698EF /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
-		2AA3C5DB6DD87339F3193448 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
-		3BA406611A99B90077C13957 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
-		4641C8949162E2FA207EDA56 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
-		4A8C49207EB7998FA8317656 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
-		4E5DD2687C126B08F7689D0A /* NativeCallbackHttpGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3391533A0BBC042BC353D57 /* NativeCallbackHttpGen.cpp */; };
-		513F9EB3FC22DF2E735C436A /* GBHttpRequestGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */; };
-		51976245361F8353679A092B /* djinni_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D99C89602C21240411D71EF /* djinni_main.cpp */; };
-		54DCED9F192B677FB54D715A /* -lm in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AC3668046DB5D3711BF958 /* -lm */; };
-		60BF39E46BAFAF2089C5679F /* NativeLogGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1FF8C71CB5678D259A807 /* NativeLogGen.cpp */; };
-		6EFB8DDA0643827CE1ED2ED4 /* GBCallbackHttpGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */; };
-		77772590B197CE2D1AD63CC0 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33978AD74F5EE670A25D3FD6 /* libdjinni_objc.a */; };
-		7BCD70FE3A56C5CAD1676D54 /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
-		875899E7A687FA4A28F1AE86 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B024B5F17C16A15105B808 /* libcurl.a */; };
-		92B2BC3C6FADF3E54CDB29AC /* NativeAsyncLoopGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CE647440F3C260B2B4D011E /* NativeAsyncLoopGen.cpp */; };
-		9ADE737D653CABBB43F27C35 /* GBAsyncLoopGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */; };
-		9CCF0956DDD6020ABCFE34C9 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7982866CE5061AE5143B8199 /* libuv.a */; };
-		9D758D1535917D24BE0A40D7 /* GBLogGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */; };
-		9F82B9B75BFF92BF06EEDB8A /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2589FD1460463CC6D7778944 /* libsqlite3.a */; };
-		A1170C1D5741A16964C8AFAA /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
-		B4AD239ED6AE2A3DCB8691D4 /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
-		CFB600DDFD72406ACC2C37F9 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
-		D20BF263DBE3159240344115 /* NativeHttpRequestGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0AB9FB2ED2A61D358A14E67 /* NativeHttpRequestGen.cpp */; };
-		D4136B7C8C7A8CC87EB08310 /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
-		D7203B0DDDC7AD6D4744A919 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5641B685BEBC5EF22E19E649 /* zf_log.c */; };
-		F0F9463D358CA7EBACC63FB8 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
+		100AE0C73022591D04EC3201 /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
+		12EC483AF2397D06604A9D32 /* GBAsyncLoopGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */; };
+		1639CF55DAC9BDED4C7718B7 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
+		2C72C45D490941E061DE5EAE /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
+		2F346EC63E057BC493A5AB5A /* NativeCallbackHttpGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3391533A0BBC042BC353D57 /* NativeCallbackHttpGen.cpp */; };
+		4F963AF7B70860541F3F7D2A /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
+		5D176152C744B7A83DF87FA5 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
+		661DC388FE2EDE28B6286979 /* NativeLogGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1FF8C71CB5678D259A807 /* NativeLogGen.cpp */; };
+		70376A6295A9BD9209D22DC0 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
+		82FA0DE128DCA222E4518628 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5641B685BEBC5EF22E19E649 /* zf_log.c */; };
+		84FE401FA2466DF5AFABC6F5 /* GBCallbackHttpGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */; };
+		8BA222FE67F2D04DB9D64323 /* GBLogGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD88EFF5A985DD702320798 /* GBLogGen.mm */; };
+		963A055021F25C5FEF4115EF /* NativeHttpRequestGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0AB9FB2ED2A61D358A14E67 /* NativeHttpRequestGen.cpp */; };
+		9F87F8F07B5A243BC4D3B9A4 /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
+		A68AB92DF439F359C776851F /* GBLogGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */; };
+		A7B8CCAFA240E096759BE055 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
+		B71A1F04B321FCF05902B61A /* djinni_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D99C89602C21240411D71EF /* djinni_main.cpp */; };
+		BC11EB0E7609A8A950BF93F5 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
+		C2111529CABBEBF77DB7C0F7 /* GBHttpRequestGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */; };
+		C9D38392DCB926B76818A451 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
+		CCFCE226BF27DEC59AC11AE1 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
+		D43E6B9F3F1F9FF1D22E1086 /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
+		D4FCD0CAC1486E359FF2433D /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
+		E15A952C8418D09E4251804F /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
+		FF626732187B950F30432550 /* NativeAsyncLoopGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CE647440F3C260B2B4D011E /* NativeAsyncLoopGen.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		15952B4372C8E0E54594F711 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 348766758B86AF32C1471568 /* libcurl.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 939A76A22F96172735F31158;
-			remoteInfo = libcurl;
-		};
-		3B2857FC8F52C115BEB2C58F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C99AA4F95316AA552A79C55;
-			remoteInfo = djinni_objc;
-		};
-		4116E75D104A37D1B9692F21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1366FBDA3B41EA03E9CC86CA;
-			remoteInfo = libuv;
-		};
-		4E2636A706860B42F95639E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 348766758B86AF32C1471568 /* libcurl.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F3B339C557535B404B172AAE;
-			remoteInfo = libcurl;
-		};
-		7807A176D823EFA5AD9E63BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E48F2BBAC1B0A6856E26F26;
-			remoteInfo = sqlite3;
-		};
-		85C08A703BE291E103AB65F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D8395115E9C30FE491C2AC03;
-			remoteInfo = djinni_objc;
-		};
-		8FCFB32D6BCC7FFE93C42A20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 178071661CB321BB5A46AC92;
-			remoteInfo = libuv;
-		};
 		B1D23047857035BEC9170F3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F0E3F1C2EA1EF2DE33482E1 /* Project object */;
@@ -111,26 +57,12 @@
 			remoteGlobalIDString = 071FB69F922B269428DF726B;
 			remoteInfo = gearsbox_jni;
 		};
-		C413311F52EBDE3B4EA8915C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC658C749F521B13A5BDCBBC;
-			remoteInfo = djinni_jni;
-		};
 		D6D00A0AB7555FA6F75B7020 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F0E3F1C2EA1EF2DE33482E1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7CF4C970578FDE53A793F972;
 			remoteInfo = gearsbox_objc;
-		};
-		D9A31A6DAD4545CFE72DA14E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E8C0CF30B4F67B456B17551;
-			remoteInfo = sqlite3;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -143,8 +75,8 @@
 		134A721B7E989B5F590C56DA /* GBCallbackHttpGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCallbackHttpGen.h; sourceTree = "<group>"; };
 		143BA7450868C032C13F2D52 /* async_loop_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_imp.hpp; sourceTree = "<group>"; };
 		2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = log_gen.hpp; sourceTree = "<group>"; };
-		348766758B86AF32C1471568 /* libcurl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcurl.xcodeproj; path = build_ios/deps/curl/libcurl.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBAsyncLoopGen+Private.h"; sourceTree = "<group>"; };
+		45DD4DE04106DB9D6B96E9D6 /* libgearsbox_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgearsbox_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5641B685BEBC5EF22E19E649 /* zf_log.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zf_log.c; sourceTree = "<group>"; };
 		5D99C89602C21240411D71EF /* djinni_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = djinni_main.cpp; sourceTree = "<group>"; };
 		5D9ED18F374D99CB84A49B2A /* GBHttpRequestGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBHttpRequestGen.h; sourceTree = "<group>"; };
@@ -165,13 +97,8 @@
 		9B38FA36772D0F3DCF01DBC2 /* json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
 		9CE647440F3C260B2B4D011E /* NativeAsyncLoopGen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeAsyncLoopGen.cpp; sourceTree = "<group>"; };
 		9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HttpRequest.cpp; sourceTree = "<group>"; };
-		A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlite3.xcodeproj; path = build_ios/deps/sqlite3/sqlite3.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A33E1888CF7CC53CFC30AFDA /* GBHttpRequestGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBHttpRequestGen+Private.h"; sourceTree = "<group>"; };
-		A3AC3668046DB5D3711BF958 /* -lm */ = {isa = PBXFileReference; lastKnownFileType = text; path = "-lm"; sourceTree = "<group>"; };
-		A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uv.xcodeproj; path = build_ios/deps/libuv/uv.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A59C05C39AD0706832A880F2 /* json-forwards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
-		A783DAC6666A3A65883C1052 /* libgearsbox_objc.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libgearsbox_objc.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = support_lib.xcodeproj; path = "build_ios/deps/djinni/support-lib/support_lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AC87E6DE8A68EEF9D106E883 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
 		B671896A9361095ACD69C846 /* zf_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zf_log.h; sourceTree = "<group>"; };
 		C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBAsyncLoopGen+Private.mm"; sourceTree = "<group>"; };
@@ -190,11 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77772590B197CE2D1AD63CC0 /* libdjinni_objc.a in Frameworks */,
-				9F82B9B75BFF92BF06EEDB8A /* libsqlite3.a in Frameworks */,
-				875899E7A687FA4A28F1AE86 /* libcurl.a in Frameworks */,
-				9CCF0956DDD6020ABCFE34C9 /* libuv.a in Frameworks */,
-				54DCED9F192B677FB54D715A /* -lm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,14 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		081481181AF8D2D603138427 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A3AC3668046DB5D3711BF958 /* -lm */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0C6571BB6B781DCC8F86152B /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,23 +153,6 @@
 			path = cpp;
 			sourceTree = "<group>";
 		};
-		2E8C0AAC6B56E127137039C5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D5DD120B3698CE31FD605042 /* libdjinni_jni.a */,
-				33978AD74F5EE670A25D3FD6 /* libdjinni_objc.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		338E3B08B0CDABCA06873C8E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				73B024B5F17C16A15105B808 /* libcurl.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		510DB776DF91A234FD04B97F /* interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,17 +161,6 @@
 				0AA46F55C169B865DF1CA1C8 /* ILog.h */,
 			);
 			path = interface;
-			sourceTree = "<group>";
-		};
-		5259025C82A20F554A710715 /* Projects */ = {
-			isa = PBXGroup;
-			children = (
-				348766758B86AF32C1471568 /* libcurl.xcodeproj */,
-				A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */,
-				A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */,
-				A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */,
-			);
-			name = Projects;
 			sourceTree = "<group>";
 		};
 		60783D52DBF0A4B47CA4527F /* zf_log */ = {
@@ -286,31 +172,12 @@
 			path = zf_log;
 			sourceTree = "<group>";
 		};
-		8414E291725AE5FC576CD9A6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7982866CE5061AE5143B8199 /* libuv.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		859346499FFF3C7AAF36C9DF /* json */ = {
 			isa = PBXGroup;
 			children = (
 				85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */,
 			);
 			path = json;
-			sourceTree = "<group>";
-		};
-		8A0CFB403D95931BD855F87B = {
-			isa = PBXGroup;
-			children = (
-				0C6571BB6B781DCC8F86152B /* Source */,
-				5259025C82A20F554A710715 /* Projects */,
-				081481181AF8D2D603138427 /* Frameworks */,
-				B4B8025D6C6F87FD7E10FE97 /* Products */,
-				A85D04AFEE06F7D5D5985827 /* Build */,
-			);
 			sourceTree = "<group>";
 		};
 		8FDC122EBADB3482BAB6C7B0 /* src */ = {
@@ -358,23 +225,6 @@
 			path = "generated-src";
 			sourceTree = "<group>";
 		};
-		B4B8025D6C6F87FD7E10FE97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A783DAC6666A3A65883C1052 /* libgearsbox_objc.dylib */,
-				7C224A2A1E0B2ECA25DE398A /* libgearsbox_jni.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C661238EB821B6FE1733FDA2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2589FD1460463CC6D7778944 /* libsqlite3.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D783157B726105D7A2559B95 /* json */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +265,24 @@
 			path = objc;
 			sourceTree = "<group>";
 		};
+		E5556F5BF901223E91FB62E7 = {
+			isa = PBXGroup;
+			children = (
+				0C6571BB6B781DCC8F86152B /* Source */,
+				E8C70CCF0ECE412B19EF795A /* Products */,
+				A85D04AFEE06F7D5D5985827 /* Build */,
+			);
+			sourceTree = "<group>";
+		};
+		E8C70CCF0ECE412B19EF795A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45DD4DE04106DB9D6B96E9D6 /* libgearsbox_objc.a */,
+				7C224A2A1E0B2ECA25DE398A /* libgearsbox_jni.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,15 +312,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				050C384E792F12476F19331C /* PBXTargetDependency */,
-				B8C4423E761789DAC9F60AB4 /* PBXTargetDependency */,
-				3588A28653D6EE07E93EBF0B /* PBXTargetDependency */,
-				5D06874C81F48AF48B14E897 /* PBXTargetDependency */,
 			);
 			name = gearsbox_objc;
 			productName = gearsbox_objc;
-			productReference = A783DAC6666A3A65883C1052 /* libgearsbox_objc.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
+			productReference = 45DD4DE04106DB9D6B96E9D6 /* libgearsbox_objc.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -461,30 +325,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = E9E9216BB526EDF7E0DEE3F0 /* Build configuration list for PBXProject "gearsbox" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
-			mainGroup = 8A0CFB403D95931BD855F87B;
-			projectDirPath = ..;
-			projectReferences = (
-				{
-					ProductGroup = 338E3B08B0CDABCA06873C8E /* Products */;
-					ProjectRef = 348766758B86AF32C1471568 /* libcurl.xcodeproj */;
-				},
-				{
-					ProductGroup = C661238EB821B6FE1733FDA2 /* Products */;
-					ProjectRef = A135B1CF1C134426ED9D0718 /* sqlite3.xcodeproj */;
-				},
-				{
-					ProductGroup = 2E8C0AAC6B56E127137039C5 /* Products */;
-					ProjectRef = A8822377AABDB44325FF4F2E /* support_lib.xcodeproj */;
-				},
-				{
-					ProductGroup = 8414E291725AE5FC576CD9A6 /* Products */;
-					ProjectRef = A3EC65F1C49A3AD2ED9EFDD8 /* uv.xcodeproj */;
-				},
+			knownRegions = (
+				en,
 			);
+			mainGroup = E5556F5BF901223E91FB62E7;
+			projectDirPath = ..;
 			projectRoot = "";
 			targets = (
 				AB970B409C3B6EA7B47A489B /* All */,
@@ -494,61 +345,23 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		2589FD1460463CC6D7778944 /* libsqlite3.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libsqlite3.a;
-			remoteRef = 7807A176D823EFA5AD9E63BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		33978AD74F5EE670A25D3FD6 /* libdjinni_objc.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libdjinni_objc.a;
-			remoteRef = 3B2857FC8F52C115BEB2C58F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		73B024B5F17C16A15105B808 /* libcurl.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libcurl.a;
-			remoteRef = 15952B4372C8E0E54594F711 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7982866CE5061AE5143B8199 /* libuv.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libuv.a;
-			remoteRef = 4116E75D104A37D1B9692F21 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D5DD120B3698CE31FD605042 /* libdjinni_jni.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libdjinni_jni.a;
-			remoteRef = C413311F52EBDE3B4EA8915C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
 		02EA64738CBD72CCBAFF038F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51976245361F8353679A092B /* djinni_main.cpp in Sources */,
-				92B2BC3C6FADF3E54CDB29AC /* NativeAsyncLoopGen.cpp in Sources */,
-				4E5DD2687C126B08F7689D0A /* NativeCallbackHttpGen.cpp in Sources */,
-				D20BF263DBE3159240344115 /* NativeHttpRequestGen.cpp in Sources */,
-				60BF39E46BAFAF2089C5679F /* NativeLogGen.cpp in Sources */,
-				20A6E9082037D272B26698EF /* log_gen.cpp in Sources */,
-				3BA406611A99B90077C13957 /* async_loop_imp.cpp in Sources */,
-				CFB600DDFD72406ACC2C37F9 /* HttpRequest.cpp in Sources */,
-				A1170C1D5741A16964C8AFAA /* HttpRequestImp.cpp in Sources */,
-				020C9A1BB39ED59ED90E4210 /* Log.cpp in Sources */,
-				D4136B7C8C7A8CC87EB08310 /* log_imp.cpp in Sources */,
-				1C678172B027EBE3620E6C55 /* jsoncpp.cpp in Sources */,
+				B71A1F04B321FCF05902B61A /* djinni_main.cpp in Sources */,
+				FF626732187B950F30432550 /* NativeAsyncLoopGen.cpp in Sources */,
+				2F346EC63E057BC493A5AB5A /* NativeCallbackHttpGen.cpp in Sources */,
+				963A055021F25C5FEF4115EF /* NativeHttpRequestGen.cpp in Sources */,
+				661DC388FE2EDE28B6286979 /* NativeLogGen.cpp in Sources */,
+				9F87F8F07B5A243BC4D3B9A4 /* log_gen.cpp in Sources */,
+				C9D38392DCB926B76818A451 /* async_loop_imp.cpp in Sources */,
+				4F963AF7B70860541F3F7D2A /* HttpRequest.cpp in Sources */,
+				D43E6B9F3F1F9FF1D22E1086 /* HttpRequestImp.cpp in Sources */,
+				1639CF55DAC9BDED4C7718B7 /* Log.cpp in Sources */,
+				100AE0C73022591D04EC3201 /* log_imp.cpp in Sources */,
+				A7B8CCAFA240E096759BE055 /* jsoncpp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,54 +369,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ADE737D653CABBB43F27C35 /* GBAsyncLoopGen+Private.mm in Sources */,
-				6EFB8DDA0643827CE1ED2ED4 /* GBCallbackHttpGen+Private.mm in Sources */,
-				513F9EB3FC22DF2E735C436A /* GBHttpRequestGen+Private.mm in Sources */,
-				9D758D1535917D24BE0A40D7 /* GBLogGen+Private.mm in Sources */,
-				00CF0624105CBC4B5DE258CF /* GBLogGen.mm in Sources */,
-				7BCD70FE3A56C5CAD1676D54 /* log_gen.cpp in Sources */,
-				4641C8949162E2FA207EDA56 /* async_loop_imp.cpp in Sources */,
-				4A8C49207EB7998FA8317656 /* HttpRequest.cpp in Sources */,
-				B4AD239ED6AE2A3DCB8691D4 /* HttpRequestImp.cpp in Sources */,
-				F0F9463D358CA7EBACC63FB8 /* Log.cpp in Sources */,
-				1D1B3F91AC0101EDA680891D /* log_imp.cpp in Sources */,
-				2AA3C5DB6DD87339F3193448 /* jsoncpp.cpp in Sources */,
-				D7203B0DDDC7AD6D4744A919 /* zf_log.c in Sources */,
+				12EC483AF2397D06604A9D32 /* GBAsyncLoopGen+Private.mm in Sources */,
+				84FE401FA2466DF5AFABC6F5 /* GBCallbackHttpGen+Private.mm in Sources */,
+				C2111529CABBEBF77DB7C0F7 /* GBHttpRequestGen+Private.mm in Sources */,
+				A68AB92DF439F359C776851F /* GBLogGen+Private.mm in Sources */,
+				8BA222FE67F2D04DB9D64323 /* GBLogGen.mm in Sources */,
+				2C72C45D490941E061DE5EAE /* log_gen.cpp in Sources */,
+				BC11EB0E7609A8A950BF93F5 /* async_loop_imp.cpp in Sources */,
+				70376A6295A9BD9209D22DC0 /* HttpRequest.cpp in Sources */,
+				D4FCD0CAC1486E359FF2433D /* HttpRequestImp.cpp in Sources */,
+				5D176152C744B7A83DF87FA5 /* Log.cpp in Sources */,
+				E15A952C8418D09E4251804F /* log_imp.cpp in Sources */,
+				CCFCE226BF27DEC59AC11AE1 /* jsoncpp.cpp in Sources */,
+				82FA0DE128DCA222E4518628 /* zf_log.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		050C384E792F12476F19331C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = djinni_objc;
-			targetProxy = 85C08A703BE291E103AB65F9 /* PBXContainerItemProxy */;
-		};
 		156A06A4F733DC4220C01436 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 071FB69F922B269428DF726B /* gearsbox_jni */;
 			targetProxy = B1D23047857035BEC9170F3B /* PBXContainerItemProxy */;
 		};
-		3588A28653D6EE07E93EBF0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libcurl;
-			targetProxy = 4E2636A706860B42F95639E3 /* PBXContainerItemProxy */;
-		};
 		44452968092646EC5C065FF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7CF4C970578FDE53A793F972 /* gearsbox_objc */;
 			targetProxy = D6D00A0AB7555FA6F75B7020 /* PBXContainerItemProxy */;
-		};
-		5D06874C81F48AF48B14E897 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libuv;
-			targetProxy = 8FCFB32D6BCC7FFE93C42A20 /* PBXContainerItemProxy */;
-		};
-		B8C4423E761789DAC9F60AB4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sqlite3;
-			targetProxy = D9A31A6DAD4545CFE72DA14E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -617,11 +410,11 @@
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					ZF_LOG_USE_NSLOG,
 					_LARGEFILE_SOURCE,
 					"_FILE_OFFSET_BITS=64",
 					"_DARWIN_USE_64_BIT_INODE=1",
 					"NDEBUG=1",
+					ZF_LOG_USE_NSLOG,
 				);
 				HEADER_SEARCH_PATHS = (
 					"./generated-src/objc",
@@ -634,7 +427,6 @@
 					"deps/djinni/support-lib/objc",
 					deps/libuv/include,
 				);
-				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
 				PRODUCT_NAME = gearsbox_objc;
@@ -647,7 +439,9 @@
 		3EE807915914A25FC71D8DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				ONLY_ACTIVE_ARCH = YES;
 				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
 			};
 			name = Debug;
@@ -719,11 +513,11 @@
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					ZF_LOG_USE_NSLOG,
 					_LARGEFILE_SOURCE,
 					"_FILE_OFFSET_BITS=64",
 					"_DARWIN_USE_64_BIT_INODE=1",
 					"DEBUG=1",
+					ZF_LOG_USE_NSLOG,
 				);
 				HEADER_SEARCH_PATHS = (
 					"./generated-src/objc",
@@ -736,7 +530,6 @@
 					"deps/djinni/support-lib/objc",
 					deps/libuv/include,
 				);
-				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";

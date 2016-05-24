@@ -266,11 +266,38 @@ int HttpRequest::Retry(){
     return m_retry_times--;
 }
 
-HttpRequest::HttpRequest():m_timeout(0),m_handle(0),m_retry_times(0),
-                        m_callback(0),m_port(0),m_post_data(0)
+HttpRequest::HttpRequest():m_timeout(0),m_retry_times(0),
+                        m_callback(0),m_port(0),m_post_data(0),m_handle(0)
 {
     HttpRequestMgr::instance().init();
     m_handle = curl_easy_init();
+    
+    
+    CURLcode curl_code = curl_easy_setopt(m_handle, CURLOPT_HEADERFUNCTION, RetriveHeaderFunction);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_HEADERFUNCTION failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+    
+    curl_code = curl_easy_setopt(m_handle, CURLOPT_HEADERDATA, &m_result.header);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_HEADERDATA failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+    
+    curl_code = curl_easy_setopt(m_handle, CURLOPT_WRITEFUNCTION, RetriveContentFunction);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_WRITEFUNCTION failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+    
+    curl_code = curl_easy_setopt(m_handle, CURLOPT_WRITEDATA, &m_result.content);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_WRITEDATA failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+    
+    curl_code = curl_easy_setopt(m_handle, CURLOPT_PRIVATE, this);
+    if (curl_code!=CURLE_OK){
+        G_LOG_FC(LOG_ERROR, "CURLOPT_PRIVATE failed CURLE:%d %s",curl_code,curl_easy_strerror(curl_code));
+    }
+
 };
 
 HttpRequest::~HttpRequest(){

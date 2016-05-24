@@ -37,11 +37,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (BOOL)init:(int32_t)output
-       param:(nonnull NSString *)param {
+- (BOOL)initialize:(int32_t)output
+             param:(nonnull NSString *)param {
     try {
-        auto r = _cppRefHandle.get()->init_(::djinni::I32::toCpp(output),
-                                            ::djinni::String::toCpp(param));
+        auto r = _cppRefHandle.get()->initialize(::djinni::I32::toCpp(output),
+                                                 ::djinni::String::toCpp(param));
         return ::djinni::Bool::fromCpp(r);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

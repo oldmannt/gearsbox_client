@@ -29,13 +29,13 @@ CJNIEXPORT jobject JNICALL Java_dyno_fun_gearsbox_LogGen_instance(JNIEnv* jniEnv
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jboolean JNICALL Java_dyno_fun_gearsbox_LogGen_00024CppProxy_native_1init(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jint j_output, jstring j_param)
+CJNIEXPORT jboolean JNICALL Java_dyno_fun_gearsbox_LogGen_00024CppProxy_native_1initialize(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jint j_output, jstring j_param)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::LogGen>(nativeRef);
-        auto r = ref->init_(::djinni::I32::toCpp(jniEnv, j_output),
-                            ::djinni::String::toCpp(jniEnv, j_param));
+        auto r = ref->initialize(::djinni::I32::toCpp(jniEnv, j_output),
+                                 ::djinni::String::toCpp(jniEnv, j_param));
         return ::djinni::release(::djinni::Bool::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }

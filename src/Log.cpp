@@ -13,12 +13,14 @@
 
 #include "zf_log/zf_log.h"
 
+/*
 #if defined (__APPLE_CC__)
 #   define ZF_LOG_USE_NSLOG
 #elif defined (__ANDROID__)
 #   define ZF_LOG_USE_ANDROID_LOG
 #endif
 #define ZF_LOG_LEVEL ZF_LOG_INFO
+ */
 
 static void fz_log_callback(const zf_log_message *msg, void* arg);
 

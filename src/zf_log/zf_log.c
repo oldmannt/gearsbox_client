@@ -289,7 +289,8 @@ static INSTRUMENTED_CONST buffer_cb g_buffer_cb = buffer_callback;
 			tag = msg->tag_b;
 			*msg->tag_e = 0;
 		}*/
-		__android_log_print(android_lvl(msg->lvl), tag, "%s", msg->msg_b);
+        const char *pp = msg->msg_b;
+		__android_log_print(android_lvl(msg->lvl), tag, "%s", pp);
 	}
 
 	enum { OUT_ANDROID_MASK = ZF_LOG_PUT_STD & ~ZF_LOG_PUT_CTX };
@@ -326,7 +327,7 @@ static INSTRUMENTED_CONST buffer_cb g_buffer_cb = buffer_callback;
 	{
 		VAR_UNUSED(arg);
 		*msg->p = 0;
-		CFLog(apple_lvl(msg->lvl), CFSTR("%s"), msg->tag_b);
+		CFLog(apple_lvl(msg->lvl), CFSTR("%s"), msg->msg_b);
 	}
 
 	enum { OUT_NSLOG_MASK = ZF_LOG_PUT_STD & ~ZF_LOG_PUT_CTX };

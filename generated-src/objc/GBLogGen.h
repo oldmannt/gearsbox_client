@@ -18,8 +18,8 @@ extern int32_t const GBLogGenLOGFATAL;
 
 + (nullable GBLogGen *)instance;
 
-- (BOOL)init:(int32_t)output
-       param:(nonnull NSString *)param;
+- (BOOL)initialize:(int32_t)output
+             param:(nonnull NSString *)param;
 
 - (void)log:(int32_t)output
         lev:(int32_t)lev

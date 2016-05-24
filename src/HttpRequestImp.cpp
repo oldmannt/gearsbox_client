@@ -41,7 +41,7 @@ int64_t HttpRequestImp::get(const std::string &url, const std::shared_ptr<Callba
     return (int64_t)this;
 }
 
-void HttpRequestImp::HttpResult(IHttpRequest *request){
+void HttpRequestImp::HttpResult(std::shared_ptr<IHttpRequest> request){
     if (!request){
         G_LOG_FC(LOG_ERROR,"result null");
         return;

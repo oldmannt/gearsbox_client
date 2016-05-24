@@ -16,7 +16,7 @@
 
 namespace gearsbox {
 
-class HttpRequest:public IHttpRequest, public std::enable_shared_from_this<IHttpRequest>{
+class HttpRequest:public IHttpRequest, public std::enable_shared_from_this<HttpRequest>{
 public:
     HttpRequest();
     virtual ~HttpRequest();

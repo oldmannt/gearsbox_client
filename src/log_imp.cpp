@@ -16,7 +16,7 @@ std::shared_ptr<LogGen> LogGen::instance(){
     return s_gearbox_log;
 }
 
-bool LogImp::init_(int32_t output, const std::string & param){
+bool LogImp::initialize(int32_t output, const std::string & param){
     return LOG_OK == g_loginit(output, param.c_str());
 }
 

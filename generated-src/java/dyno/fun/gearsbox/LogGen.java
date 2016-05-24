@@ -24,7 +24,7 @@ public abstract class LogGen {
 
     public static final int LOG_FATAL = 6;
 
-    public abstract boolean init(int output, String param);
+    public abstract boolean initialize(int output, String param);
 
     public abstract void log(int output, int lev, String msg);
 
@@ -54,12 +54,12 @@ public abstract class LogGen {
         }
 
         @Override
-        public boolean init(int output, String param)
+        public boolean initialize(int output, String param)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_init(this.nativeRef, output, param);
+            return native_initialize(this.nativeRef, output, param);
         }
-        private native boolean native_init(long _nativeRef, int output, String param);
+        private native boolean native_initialize(long _nativeRef, int output, String param);
 
         @Override
         public void log(int output, int lev, String msg)

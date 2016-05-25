@@ -325,9 +325,13 @@ static INSTRUMENTED_CONST buffer_cb g_buffer_cb = buffer_callback;
 
 	static void out_nslog_callback(const zf_log_message *const msg, void *arg)
 	{
+#ifdef NDEBUG
 		VAR_UNUSED(arg);
 		*msg->p = 0;
 		CFLog(apple_lvl(msg->lvl), CFSTR("%s"), msg->msg_b);
+#else
+        printf("%s", msg->buf);
+#endif
 	}
 
 	enum { OUT_NSLOG_MASK = ZF_LOG_PUT_STD & ~ZF_LOG_PUT_CTX };

@@ -1,4 +1,6 @@
 
+@import "ui.djinni"
+
 callback_http_gen = interface +j +o{
     callback(id:i64, result:bool, data:string): bool;
 }

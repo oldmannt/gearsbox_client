@@ -1,5 +1,8 @@
-ios_proj: gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp gearsbox.djinni
+djinni:gearsbox.djinni ui.djinni
+	-rm -rf generated-src
 	sh ./run_djinni.sh
+
+ios_proj: djinni gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp 
 	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./gearsbox.gyp
 
 ios: ios_proj

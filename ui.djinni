@@ -1,0 +1,46 @@
+view_frame = record{
+	x:i32;
+	y:i32;
+	w:i32;
+	h:i32;
+}
+
+constraint_type = enum {
+	Leading;
+	Trailing;
+	Top;
+	Bottom;
+	Width;
+	Height;
+	CenterX;
+	CenterY;
+}
+
+view_constraint = record{
+	type:constraint_type;
+	view_from:string;
+	view_to:string;
+	multiplier:i32;
+	offset:i32;
+}
+
+view_gen = interface +j +o {
+	setFrame(frame:view_frame);
+	getFrame():view_frame;
+	setVisiable(v:bool);
+	addSubView(view:view_gen):bool;
+	addConstraint(constraint:view_constraint);
+}
+
+view_group_gen = interface +j +o{
+	getView(id:string):view_gen;
+	addView(view:view_gen):bool;
+	removeView(view:view_gen):bool;
+}
+
+ui_injecter_gen = interface +c{
+	static instance():ui_injecter_gen;
+	inject(id:string, view_group:view_group_gen);
+	removeViewGroup(id:string);
+	getViewGroup(id:string);
+}

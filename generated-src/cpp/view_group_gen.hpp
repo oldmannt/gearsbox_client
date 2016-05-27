@@ -9,6 +9,8 @@
 namespace gearsbox {
 
 class ViewGen;
+enum class ViewType;
+struct ViewConstraint;
 
 class ViewGroupGen {
 public:
@@ -16,9 +18,11 @@ public:
 
     virtual std::shared_ptr<ViewGen> getView(const std::string & id) = 0;
 
-    virtual bool addView(const std::shared_ptr<ViewGen> & view) = 0;
+    virtual bool addView(const std::string & id, ViewType type) = 0;
 
-    virtual bool removeView(const std::shared_ptr<ViewGen> & view) = 0;
+    virtual bool removeView(const std::string & id) = 0;
+
+    virtual void addConstraint(const ViewConstraint & constraint) = 0;
 };
 
 }  // namespace gearsbox

@@ -15,17 +15,19 @@
 #include <map>
 namespace gearsbox {
 
-class UiInjecterImpl:public UiInjecterGen{
+class UiInjecterImp:public UiInjecterGen{
 public:
-    UiInjecterImpl();
-    virtual ~UiInjecterImpl();
+    UiInjecterImp();
+    virtual ~UiInjecterImp();
     
     virtual void inject(const std::string & id, const std::shared_ptr<ViewGroupGen> & view_group);
-    virtual void getViewGroup(const std::string & id);
+    virtual void removeViewGroup(const std::string & id);
+    virtual std::shared_ptr<ViewGroupGen> getViewGroup(const std::string & id);
     
 private:
     typedef std::map<std::string, std::shared_ptr<ViewGroupGen>> MapViewGroup;
     
+    MapViewGroup m_mapViewGroup;
 };
     
 }

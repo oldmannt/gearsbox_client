@@ -3,26 +3,25 @@
 
 #pragma once
 
-#include <memory>
+#include <string>
 
 namespace gearsbox {
 
-struct ViewConstraint;
 struct ViewFrame;
 
 class ViewGen {
 public:
     virtual ~ViewGen() {}
 
+    virtual std::string getId() = 0;
+
     virtual void setFrame(const ViewFrame & frame) = 0;
 
     virtual ViewFrame getFrame() = 0;
 
+    virtual void setBackgroundColor(float a, float r, float g, float b) = 0;
+
     virtual void setVisiable(bool v) = 0;
-
-    virtual bool addSubView(const std::shared_ptr<ViewGen> & view) = 0;
-
-    virtual void addConstraint(const ViewConstraint & constraint) = 0;
 };
 
 }  // namespace gearsbox

@@ -6,7 +6,9 @@ package dyno.fun.gearsbox;
 public abstract class ViewGroupGen {
     public abstract ViewGen getView(String id);
 
-    public abstract boolean addView(ViewGen view);
+    public abstract boolean addView(String id, ViewType type);
 
-    public abstract boolean removeView(ViewGen view);
+    public abstract boolean removeView(String id);
+
+    public abstract void addConstraint(ViewConstraint constraint);
 }

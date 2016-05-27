@@ -4,21 +4,21 @@
 #import <Foundation/Foundation.h>
 
 @interface GBViewFrame : NSObject
-- (nonnull instancetype)initWithX:(int32_t)x
-                                y:(int32_t)y
-                                w:(int32_t)w
-                                h:(int32_t)h;
-+ (nonnull instancetype)viewFrameWithX:(int32_t)x
-                                     y:(int32_t)y
-                                     w:(int32_t)w
-                                     h:(int32_t)h;
+- (nonnull instancetype)initWithX:(float)x
+                                y:(float)y
+                                w:(float)w
+                                h:(float)h;
++ (nonnull instancetype)viewFrameWithX:(float)x
+                                     y:(float)y
+                                     w:(float)w
+                                     h:(float)h;
 
-@property (nonatomic, readonly) int32_t x;
+@property (nonatomic, readonly) float x;
 
-@property (nonatomic, readonly) int32_t y;
+@property (nonatomic, readonly) float y;
 
-@property (nonatomic, readonly) int32_t w;
+@property (nonatomic, readonly) float w;
 
-@property (nonatomic, readonly) int32_t h;
+@property (nonatomic, readonly) float h;
 
 @end

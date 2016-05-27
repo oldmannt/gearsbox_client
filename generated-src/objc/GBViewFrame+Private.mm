@@ -10,18 +10,18 @@ namespace djinni_generated {
 auto ViewFrame::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
-    return {::djinni::I32::toCpp(obj.x),
-            ::djinni::I32::toCpp(obj.y),
-            ::djinni::I32::toCpp(obj.w),
-            ::djinni::I32::toCpp(obj.h)};
+    return {::djinni::F32::toCpp(obj.x),
+            ::djinni::F32::toCpp(obj.y),
+            ::djinni::F32::toCpp(obj.w),
+            ::djinni::F32::toCpp(obj.h)};
 }
 
 auto ViewFrame::fromCpp(const CppType& cpp) -> ObjcType
 {
-    return [[GBViewFrame alloc] initWithX:(::djinni::I32::fromCpp(cpp.x))
-                                        y:(::djinni::I32::fromCpp(cpp.y))
-                                        w:(::djinni::I32::fromCpp(cpp.w))
-                                        h:(::djinni::I32::fromCpp(cpp.h))];
+    return [[GBViewFrame alloc] initWithX:(::djinni::F32::fromCpp(cpp.x))
+                                        y:(::djinni::F32::fromCpp(cpp.y))
+                                        w:(::djinni::F32::fromCpp(cpp.w))
+                                        h:(::djinni::F32::fromCpp(cpp.h))];
 }
 
 }  // namespace djinni_generated

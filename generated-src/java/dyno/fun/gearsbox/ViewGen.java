@@ -4,13 +4,13 @@
 package dyno.fun.gearsbox;
 
 public abstract class ViewGen {
+    public abstract String getId();
+
     public abstract void setFrame(ViewFrame frame);
 
     public abstract ViewFrame getFrame();
 
+    public abstract void setBackgroundColor(float a, float r, float g, float b);
+
     public abstract void setVisiable(boolean v);
-
-    public abstract boolean addSubView(ViewGen view);
-
-    public abstract void addConstraint(ViewConstraint constraint);
 }

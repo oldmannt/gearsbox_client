@@ -3,21 +3,20 @@
 
 #pragma once
 
-#include <cstdint>
 #include <utility>
 
 namespace gearsbox {
 
 struct ViewFrame final {
-    int32_t x;
-    int32_t y;
-    int32_t w;
-    int32_t h;
+    float x;
+    float y;
+    float w;
+    float h;
 
-    ViewFrame(int32_t x_,
-              int32_t y_,
-              int32_t w_,
-              int32_t h_)
+    ViewFrame(float x_,
+              float y_,
+              float w_,
+              float h_)
     : x(std::move(x_))
     , y(std::move(y_))
     , w(std::move(w_))

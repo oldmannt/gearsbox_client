@@ -6,10 +6,10 @@
 
 @implementation GBViewFrame
 
-- (nonnull instancetype)initWithX:(int32_t)x
-                                y:(int32_t)y
-                                w:(int32_t)w
-                                h:(int32_t)h
+- (nonnull instancetype)initWithX:(float)x
+                                y:(float)y
+                                w:(float)w
+                                h:(float)h
 {
     if (self = [super init]) {
         _x = x;
@@ -20,10 +20,10 @@
     return self;
 }
 
-+ (nonnull instancetype)viewFrameWithX:(int32_t)x
-                                     y:(int32_t)y
-                                     w:(int32_t)w
-                                     h:(int32_t)h
++ (nonnull instancetype)viewFrameWithX:(float)x
+                                     y:(float)y
+                                     w:(float)w
+                                     h:(float)h
 {
     return [[self alloc] initWithX:x
                                  y:y

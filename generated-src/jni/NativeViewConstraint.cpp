@@ -15,23 +15,25 @@ auto NativeViewConstraint::fromCpp(JNIEnv* jniEnv, const CppType& c) -> ::djinni
     const auto& data = ::djinni::JniClass<NativeViewConstraint>::get();
     auto r = ::djinni::LocalRef<JniType>{jniEnv->NewObject(data.clazz.get(), data.jconstructor,
                                                            ::djinni::get(::djinni_generated::NativeConstraintType::fromCpp(jniEnv, c.type)),
+                                                           ::djinni::get(::djinni_generated::NativeConstraintType::fromCpp(jniEnv, c.type_to)),
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.view_from)),
                                                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c.view_to)),
-                                                           ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.multiplier)),
-                                                           ::djinni::get(::djinni::I32::fromCpp(jniEnv, c.offset)))};
+                                                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c.multiplier)),
+                                                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c.offset)))};
     ::djinni::jniExceptionCheck(jniEnv);
     return r;
 }
 
 auto NativeViewConstraint::toCpp(JNIEnv* jniEnv, JniType j) -> CppType {
-    ::djinni::JniLocalScope jscope(jniEnv, 6);
+    ::djinni::JniLocalScope jscope(jniEnv, 7);
     assert(j != nullptr);
     const auto& data = ::djinni::JniClass<NativeViewConstraint>::get();
     return {::djinni_generated::NativeConstraintType::toCpp(jniEnv, jniEnv->GetObjectField(j, data.field_mType)),
+            ::djinni_generated::NativeConstraintType::toCpp(jniEnv, jniEnv->GetObjectField(j, data.field_mTypeTo)),
             ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mViewFrom)),
             ::djinni::String::toCpp(jniEnv, (jstring)jniEnv->GetObjectField(j, data.field_mViewTo)),
-            ::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mMultiplier)),
-            ::djinni::I32::toCpp(jniEnv, jniEnv->GetIntField(j, data.field_mOffset))};
+            ::djinni::F32::toCpp(jniEnv, jniEnv->GetFloatField(j, data.field_mMultiplier)),
+            ::djinni::F32::toCpp(jniEnv, jniEnv->GetFloatField(j, data.field_mOffset))};
 }
 
 }  // namespace djinni_generated

@@ -33,22 +33,22 @@ private:
         JavaProxy(JniType j);
         ~JavaProxy();
 
+        std::string getId() override;
         void setFrame(const ::gearsbox::ViewFrame & frame) override;
         ::gearsbox::ViewFrame getFrame() override;
+        void setBackgroundColor(float a, float r, float g, float b) override;
         void setVisiable(bool v) override;
-        bool addSubView(const std::shared_ptr<::gearsbox::ViewGen> & view) override;
-        void addConstraint(const ::gearsbox::ViewConstraint & constraint) override;
 
     private:
         friend ::djinni::JniInterface<::gearsbox::ViewGen, ::djinni_generated::NativeViewGen>;
     };
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("dyno/fun/gearsbox/ViewGen") };
+    const jmethodID method_getId { ::djinni::jniGetMethodID(clazz.get(), "getId", "()Ljava/lang/String;") };
     const jmethodID method_setFrame { ::djinni::jniGetMethodID(clazz.get(), "setFrame", "(Ldyno/fun/gearsbox/ViewFrame;)V") };
     const jmethodID method_getFrame { ::djinni::jniGetMethodID(clazz.get(), "getFrame", "()Ldyno/fun/gearsbox/ViewFrame;") };
+    const jmethodID method_setBackgroundColor { ::djinni::jniGetMethodID(clazz.get(), "setBackgroundColor", "(FFFF)V") };
     const jmethodID method_setVisiable { ::djinni::jniGetMethodID(clazz.get(), "setVisiable", "(Z)V") };
-    const jmethodID method_addSubView { ::djinni::jniGetMethodID(clazz.get(), "addSubView", "(Ldyno/fun/gearsbox/ViewGen;)Z") };
-    const jmethodID method_addConstraint { ::djinni::jniGetMethodID(clazz.get(), "addConstraint", "(Ldyno/fun/gearsbox/ViewConstraint;)V") };
 };
 
 }  // namespace djinni_generated

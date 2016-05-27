@@ -25,11 +25,11 @@ private:
     friend ::djinni::JniClass<NativeViewFrame>;
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("dyno/fun/gearsbox/ViewFrame") };
-    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(IIII)V") };
-    const jfieldID field_mX { ::djinni::jniGetFieldID(clazz.get(), "mX", "I") };
-    const jfieldID field_mY { ::djinni::jniGetFieldID(clazz.get(), "mY", "I") };
-    const jfieldID field_mW { ::djinni::jniGetFieldID(clazz.get(), "mW", "I") };
-    const jfieldID field_mH { ::djinni::jniGetFieldID(clazz.get(), "mH", "I") };
+    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(FFFF)V") };
+    const jfieldID field_mX { ::djinni::jniGetFieldID(clazz.get(), "mX", "F") };
+    const jfieldID field_mY { ::djinni::jniGetFieldID(clazz.get(), "mY", "F") };
+    const jfieldID field_mW { ::djinni::jniGetFieldID(clazz.get(), "mW", "F") };
+    const jfieldID field_mH { ::djinni::jniGetFieldID(clazz.get(), "mH", "F") };
 };
 
 }  // namespace djinni_generated

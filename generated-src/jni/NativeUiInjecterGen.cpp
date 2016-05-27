@@ -49,13 +49,14 @@ CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_nativ
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1getViewGroup(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
+CJNIEXPORT jobject JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1getViewGroup(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::UiInjecterGen>(nativeRef);
-        ref->getViewGroup(::djinni::String::toCpp(jniEnv, j_id));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+        auto r = ref->getViewGroup(::djinni::String::toCpp(jniEnv, j_id));
+        return ::djinni::release(::djinni_generated::NativeViewGroupGen::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
 }  // namespace djinni_generated

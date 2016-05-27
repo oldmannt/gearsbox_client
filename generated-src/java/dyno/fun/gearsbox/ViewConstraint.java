@@ -8,21 +8,25 @@ public final class ViewConstraint {
 
     /*package*/ final ConstraintType mType;
 
+    /*package*/ final ConstraintType mTypeTo;
+
     /*package*/ final String mViewFrom;
 
     /*package*/ final String mViewTo;
 
-    /*package*/ final int mMultiplier;
+    /*package*/ final float mMultiplier;
 
-    /*package*/ final int mOffset;
+    /*package*/ final float mOffset;
 
     public ViewConstraint(
             ConstraintType type,
+            ConstraintType typeTo,
             String viewFrom,
             String viewTo,
-            int multiplier,
-            int offset) {
+            float multiplier,
+            float offset) {
         this.mType = type;
+        this.mTypeTo = typeTo;
         this.mViewFrom = viewFrom;
         this.mViewTo = viewTo;
         this.mMultiplier = multiplier;
@@ -33,6 +37,10 @@ public final class ViewConstraint {
         return mType;
     }
 
+    public ConstraintType getTypeTo() {
+        return mTypeTo;
+    }
+
     public String getViewFrom() {
         return mViewFrom;
     }
@@ -41,11 +49,11 @@ public final class ViewConstraint {
         return mViewTo;
     }
 
-    public int getMultiplier() {
+    public float getMultiplier() {
         return mMultiplier;
     }
 
-    public int getOffset() {
+    public float getOffset() {
         return mOffset;
     }
 
@@ -53,6 +61,7 @@ public final class ViewConstraint {
     public String toString() {
         return "ViewConstraint{" +
                 "mType=" + mType +
+                "," + "mTypeTo=" + mTypeTo +
                 "," + "mViewFrom=" + mViewFrom +
                 "," + "mViewTo=" + mViewTo +
                 "," + "mMultiplier=" + mMultiplier +

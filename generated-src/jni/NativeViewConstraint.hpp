@@ -25,12 +25,13 @@ private:
     friend ::djinni::JniClass<NativeViewConstraint>;
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("dyno/fun/gearsbox/ViewConstraint") };
-    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ldyno/fun/gearsbox/ConstraintType;Ljava/lang/String;Ljava/lang/String;II)V") };
+    const jmethodID jconstructor { ::djinni::jniGetMethodID(clazz.get(), "<init>", "(Ldyno/fun/gearsbox/ConstraintType;Ldyno/fun/gearsbox/ConstraintType;Ljava/lang/String;Ljava/lang/String;FF)V") };
     const jfieldID field_mType { ::djinni::jniGetFieldID(clazz.get(), "mType", "Ldyno/fun/gearsbox/ConstraintType;") };
+    const jfieldID field_mTypeTo { ::djinni::jniGetFieldID(clazz.get(), "mTypeTo", "Ldyno/fun/gearsbox/ConstraintType;") };
     const jfieldID field_mViewFrom { ::djinni::jniGetFieldID(clazz.get(), "mViewFrom", "Ljava/lang/String;") };
     const jfieldID field_mViewTo { ::djinni::jniGetFieldID(clazz.get(), "mViewTo", "Ljava/lang/String;") };
-    const jfieldID field_mMultiplier { ::djinni::jniGetFieldID(clazz.get(), "mMultiplier", "I") };
-    const jfieldID field_mOffset { ::djinni::jniGetFieldID(clazz.get(), "mOffset", "I") };
+    const jfieldID field_mMultiplier { ::djinni::jniGetFieldID(clazz.get(), "mMultiplier", "F") };
+    const jfieldID field_mOffset { ::djinni::jniGetFieldID(clazz.get(), "mOffset", "F") };
 };
 
 }  // namespace djinni_generated

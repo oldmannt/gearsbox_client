@@ -7,13 +7,15 @@
 @implementation GBViewConstraint
 
 - (nonnull instancetype)initWithType:(GBConstraintType)type
+                              typeTo:(GBConstraintType)typeTo
                             viewFrom:(nonnull NSString *)viewFrom
                               viewTo:(nonnull NSString *)viewTo
-                          multiplier:(int32_t)multiplier
-                              offset:(int32_t)offset
+                          multiplier:(float)multiplier
+                              offset:(float)offset
 {
     if (self = [super init]) {
         _type = type;
+        _typeTo = typeTo;
         _viewFrom = [viewFrom copy];
         _viewTo = [viewTo copy];
         _multiplier = multiplier;
@@ -23,12 +25,14 @@
 }
 
 + (nonnull instancetype)viewConstraintWithType:(GBConstraintType)type
+                                        typeTo:(GBConstraintType)typeTo
                                       viewFrom:(nonnull NSString *)viewFrom
                                         viewTo:(nonnull NSString *)viewTo
-                                    multiplier:(int32_t)multiplier
-                                        offset:(int32_t)offset
+                                    multiplier:(float)multiplier
+                                        offset:(float)offset
 {
     return [[self alloc] initWithType:type
+                               typeTo:typeTo
                              viewFrom:viewFrom
                                viewTo:viewTo
                            multiplier:multiplier
@@ -37,7 +41,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p type:%@ viewFrom:%@ viewTo:%@ multiplier:%@ offset:%@>", self.class, (void *)self, @(self.type), self.viewFrom, self.viewTo, @(self.multiplier), @(self.offset)];
+    return [NSString stringWithFormat:@"<%@ %p type:%@ typeTo:%@ viewFrom:%@ viewTo:%@ multiplier:%@ offset:%@>", self.class, (void *)self, @(self.type), @(self.typeTo), self.viewFrom, self.viewTo, @(self.multiplier), @(self.offset)];
 }
 
 @end

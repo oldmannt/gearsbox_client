@@ -15,6 +15,6 @@
 
 - (void)removeViewGroup:(nonnull NSString *)id;
 
-- (void)getViewGroup:(nonnull NSString *)id;
+- (nullable id<GBViewGroupGen>)getViewGroup:(nonnull NSString *)id;
 
 @end

@@ -12,12 +12,25 @@
 		3380C7461CEBBE8F00AEA910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380C7441CEBBE8F00AEA910 /* Main.storyboard */; };
 		3380C7481CEBBE8F00AEA910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3380C7471CEBBE8F00AEA910 /* Assets.xcassets */; };
 		3380C74B1CEBBE8F00AEA910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3380C7491CEBBE8F00AEA910 /* LaunchScreen.storyboard */; };
-		3380C77D1CEBBED100AEA910 /* libgearsbox_objc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3380C77A1CEBBEB900AEA910 /* libgearsbox_objc.dylib */; };
 		3380C7AC1CEBEF4C00AEA910 /* justfor_cpplink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3380C7AB1CEBEF4C00AEA910 /* justfor_cpplink.cpp */; };
 		3380C7B31CEBF62A00AEA910 /* MainLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C7B21CEBF62A00AEA910 /* MainLoop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		332E747C1CF6CD0600F59B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 332E74761CF6CD0600F59B2C /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45DD4DE04106DB9D6B96E9D6;
+			remoteInfo = gearsbox_objc;
+		};
+		332E747E1CF6CD0600F59B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 332E74761CF6CD0600F59B2C /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7C224A2A1E0B2ECA25DE398A;
+			remoteInfo = gearsbox_jni;
+		};
 		3380C7521CEBBE8F00AEA910 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3380C7351CEBBE8F00AEA910 /* Project object */;
@@ -32,23 +45,10 @@
 			remoteGlobalIDString = 3380C73C1CEBBE8F00AEA910;
 			remoteInfo = testgearsbox;
 		};
-		3380C7791CEBBEB900AEA910 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3380C76F1CEBBEB900AEA910 /* gearsbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A783DAC6666A3A65883C1052;
-			remoteInfo = gearsbox_objc;
-		};
-		3380C77B1CEBBEB900AEA910 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3380C76F1CEBBEB900AEA910 /* gearsbox.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 21822D23CFBCE0CD442BC2CA;
-			remoteInfo = gearsbox_jni;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		332E74761CF6CD0600F59B2C /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = ../../build_ios/gearsbox.xcodeproj; sourceTree = "<group>"; };
 		3380C73D1CEBBE8F00AEA910 /* testgearsbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testgearsbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380C7401CEBBE8F00AEA910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3380C7421CEBBE8F00AEA910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +58,6 @@
 		3380C74C1CEBBE8F00AEA910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3380C7511CEBBE8F00AEA910 /* testgearsboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testgearsboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3380C75C1CEBBE8F00AEA910 /* testgearsboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testgearsboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3380C76F1CEBBEB900AEA910 /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = ../../build_ios/gearsbox.xcodeproj; sourceTree = "<group>"; };
 		3380C7AA1CEBEF4C00AEA910 /* testgearsbox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testgearsbox-Bridging-Header.h"; sourceTree = "<group>"; };
 		3380C7AB1CEBEF4C00AEA910 /* justfor_cpplink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = justfor_cpplink.cpp; sourceTree = "<group>"; };
 		3380C7B21CEBF62A00AEA910 /* MainLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoop.swift; sourceTree = "<group>"; };
@@ -69,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3380C77D1CEBBED100AEA910 /* libgearsbox_objc.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		332E74771CF6CD0600F59B2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				332E747D1CF6CD0600F59B2C /* libgearsbox_objc.a */,
+				332E747F1CF6CD0600F59B2C /* libgearsbox_jni.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3380C7341CEBBE8F00AEA910 = {
 			isa = PBXGroup;
 			children = (
@@ -128,18 +135,9 @@
 		3380C76E1CEBBEA000AEA910 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				3380C76F1CEBBEB900AEA910 /* gearsbox.xcodeproj */,
+				332E74761CF6CD0600F59B2C /* gearsbox.xcodeproj */,
 			);
 			name = Projects;
-			sourceTree = "<group>";
-		};
-		3380C7701CEBBEB900AEA910 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3380C77A1CEBBEB900AEA910 /* libgearsbox_objc.dylib */,
-				3380C77C1CEBBEB900AEA910 /* libgearsbox_jni.dylib */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +232,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3380C7701CEBBEB900AEA910 /* Products */;
-					ProjectRef = 3380C76F1CEBBEB900AEA910 /* gearsbox.xcodeproj */;
+					ProductGroup = 332E74771CF6CD0600F59B2C /* Products */;
+					ProjectRef = 332E74761CF6CD0600F59B2C /* gearsbox.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -248,18 +246,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3380C77A1CEBBEB900AEA910 /* libgearsbox_objc.dylib */ = {
+		332E747D1CF6CD0600F59B2C /* libgearsbox_objc.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libgearsbox_objc.dylib;
-			remoteRef = 3380C7791CEBBEB900AEA910 /* PBXContainerItemProxy */;
+			fileType = archive.ar;
+			path = libgearsbox_objc.a;
+			remoteRef = 332E747C1CF6CD0600F59B2C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3380C77C1CEBBEB900AEA910 /* libgearsbox_jni.dylib */ = {
+		332E747F1CF6CD0600F59B2C /* libgearsbox_jni.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libgearsbox_jni.dylib;
-			remoteRef = 3380C77B1CEBBEB900AEA910 /* PBXContainerItemProxy */;
+			fileType = archive.ar;
+			path = libgearsbox_jni.a;
+			remoteRef = 332E747E1CF6CD0600F59B2C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

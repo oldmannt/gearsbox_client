@@ -10,7 +10,7 @@ public abstract class UiInjecterGen {
 
     public abstract void removeViewGroup(String id);
 
-    public abstract void getViewGroup(String id);
+    public abstract ViewGroupGen getViewGroup(String id);
 
     public static native UiInjecterGen instance();
 
@@ -54,11 +54,11 @@ public abstract class UiInjecterGen {
         private native void native_removeViewGroup(long _nativeRef, String id);
 
         @Override
-        public void getViewGroup(String id)
+        public ViewGroupGen getViewGroup(String id)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_getViewGroup(this.nativeRef, id);
+            return native_getViewGroup(this.nativeRef, id);
         }
-        private native void native_getViewGroup(long _nativeRef, String id);
+        private native ViewGroupGen native_getViewGroup(long _nativeRef, String id);
     }
 }

@@ -5,12 +5,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "703C8D6A122D254C79740E410734EC0A4643394D" : 0,
-    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0,
+    "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C78AADCE-E36C-49ED-94C4-453A2581E1BE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "703C8D6A122D254C79740E410734EC0A4643394D" : "gearsbox_client\/",
-    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "gearsbox_client\/deps\/djinni\/"
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "gearsbox_client\/deps\/djinni\/",
+    "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "testgearsbox",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oldmannt\/gearsbox_client.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "703C8D6A122D254C79740E410734EC0A4643394D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oldmannt\/USNIT.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302"
     }
   ]
 }

@@ -52,9 +52,10 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)getViewGroup:(nonnull NSString *)id {
+- (nullable id<GBViewGroupGen>)getViewGroup:(nonnull NSString *)id {
     try {
-        _cppRefHandle.get()->getViewGroup(::djinni::String::toCpp(id));
+        auto r = _cppRefHandle.get()->getViewGroup(::djinni::String::toCpp(id));
+        return ::djinni_generated::ViewGroupGen::fromCpp(r);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

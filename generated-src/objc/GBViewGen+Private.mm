@@ -5,9 +5,7 @@
 #import "GBViewGen.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
-#import "GBViewConstraint+Private.h"
 #import "GBViewFrame+Private.h"
-#import "GBViewGen+Private.h"
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
 
@@ -19,6 +17,13 @@ class ViewGen::ObjcProxy final
 {
 public:
     using Handle::Handle;
+    std::string getId() override
+    {
+        @autoreleasepool {
+            auto r = [Handle::get() getId];
+            return ::djinni::String::toCpp(r);
+        }
+    }
     void setFrame(const ::gearsbox::ViewFrame & c_frame) override
     {
         @autoreleasepool {
@@ -32,23 +37,19 @@ public:
             return ::djinni_generated::ViewFrame::toCpp(r);
         }
     }
+    void setBackgroundColor(float c_a, float c_r, float c_g, float c_b) override
+    {
+        @autoreleasepool {
+            [Handle::get() setBackgroundColor:(::djinni::F32::fromCpp(c_a))
+                                            r:(::djinni::F32::fromCpp(c_r))
+                                            g:(::djinni::F32::fromCpp(c_g))
+                                            b:(::djinni::F32::fromCpp(c_b))];
+        }
+    }
     void setVisiable(bool c_v) override
     {
         @autoreleasepool {
             [Handle::get() setVisiable:(::djinni::Bool::fromCpp(c_v))];
-        }
-    }
-    bool addSubView(const std::shared_ptr<::gearsbox::ViewGen> & c_view) override
-    {
-        @autoreleasepool {
-            auto r = [Handle::get() addSubView:(::djinni_generated::ViewGen::fromCpp(c_view))];
-            return ::djinni::Bool::toCpp(r);
-        }
-    }
-    void addConstraint(const ::gearsbox::ViewConstraint & c_constraint) override
-    {
-        @autoreleasepool {
-            [Handle::get() addConstraint:(::djinni_generated::ViewConstraint::fromCpp(c_constraint))];
         }
     }
 };

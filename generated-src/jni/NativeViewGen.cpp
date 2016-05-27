@@ -3,9 +3,7 @@
 
 #include "NativeViewGen.hpp"  // my header
 #include "Marshal.hpp"
-#include "NativeViewConstraint.hpp"
 #include "NativeViewFrame.hpp"
-#include "NativeViewGen.hpp"
 
 namespace djinni_generated {
 
@@ -17,6 +15,14 @@ NativeViewGen::JavaProxy::JavaProxy(JniType j) : Handle(::djinni::jniGetThreadEn
 
 NativeViewGen::JavaProxy::~JavaProxy() = default;
 
+std::string NativeViewGen::JavaProxy::getId() {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeViewGen>::get();
+    auto jret = (jstring)jniEnv->CallObjectMethod(Handle::get().get(), data.method_getId);
+    ::djinni::jniExceptionCheck(jniEnv);
+    return ::djinni::String::toCpp(jniEnv, jret);
+}
 void NativeViewGen::JavaProxy::setFrame(const ::gearsbox::ViewFrame & c_frame) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
@@ -33,29 +39,23 @@ void NativeViewGen::JavaProxy::setFrame(const ::gearsbox::ViewFrame & c_frame) {
     ::djinni::jniExceptionCheck(jniEnv);
     return ::djinni_generated::NativeViewFrame::toCpp(jniEnv, jret);
 }
+void NativeViewGen::JavaProxy::setBackgroundColor(float c_a, float c_r, float c_g, float c_b) {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeViewGen>::get();
+    jniEnv->CallVoidMethod(Handle::get().get(), data.method_setBackgroundColor,
+                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c_a)),
+                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c_r)),
+                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c_g)),
+                           ::djinni::get(::djinni::F32::fromCpp(jniEnv, c_b)));
+    ::djinni::jniExceptionCheck(jniEnv);
+}
 void NativeViewGen::JavaProxy::setVisiable(bool c_v) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeViewGen>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_setVisiable,
                            ::djinni::get(::djinni::Bool::fromCpp(jniEnv, c_v)));
-    ::djinni::jniExceptionCheck(jniEnv);
-}
-bool NativeViewGen::JavaProxy::addSubView(const std::shared_ptr<::gearsbox::ViewGen> & c_view) {
-    auto jniEnv = ::djinni::jniGetThreadEnv();
-    ::djinni::JniLocalScope jscope(jniEnv, 10);
-    const auto& data = ::djinni::JniClass<::djinni_generated::NativeViewGen>::get();
-    auto jret = jniEnv->CallBooleanMethod(Handle::get().get(), data.method_addSubView,
-                                          ::djinni::get(::djinni_generated::NativeViewGen::fromCpp(jniEnv, c_view)));
-    ::djinni::jniExceptionCheck(jniEnv);
-    return ::djinni::Bool::toCpp(jniEnv, jret);
-}
-void NativeViewGen::JavaProxy::addConstraint(const ::gearsbox::ViewConstraint & c_constraint) {
-    auto jniEnv = ::djinni::jniGetThreadEnv();
-    ::djinni::JniLocalScope jscope(jniEnv, 10);
-    const auto& data = ::djinni::JniClass<::djinni_generated::NativeViewGen>::get();
-    jniEnv->CallVoidMethod(Handle::get().get(), data.method_addConstraint,
-                           ::djinni::get(::djinni_generated::NativeViewConstraint::fromCpp(jniEnv, c_constraint)));
     ::djinni::jniExceptionCheck(jniEnv);
 }
 

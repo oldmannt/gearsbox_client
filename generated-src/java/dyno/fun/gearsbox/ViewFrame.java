@@ -6,38 +6,38 @@ package dyno.fun.gearsbox;
 public final class ViewFrame {
 
 
-    /*package*/ final int mX;
+    /*package*/ final float mX;
 
-    /*package*/ final int mY;
+    /*package*/ final float mY;
 
-    /*package*/ final int mW;
+    /*package*/ final float mW;
 
-    /*package*/ final int mH;
+    /*package*/ final float mH;
 
     public ViewFrame(
-            int x,
-            int y,
-            int w,
-            int h) {
+            float x,
+            float y,
+            float w,
+            float h) {
         this.mX = x;
         this.mY = y;
         this.mW = w;
         this.mH = h;
     }
 
-    public int getX() {
+    public float getX() {
         return mX;
     }
 
-    public int getY() {
+    public float getY() {
         return mY;
     }
 
-    public int getW() {
+    public float getW() {
         return mW;
     }
 
-    public int getH() {
+    public float getH() {
         return mH;
     }
 

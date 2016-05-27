@@ -5,6 +5,7 @@
 #import "GBViewGroupGen.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "GBViewConstraint+Private.h"
 #import "GBViewGen+Private.h"
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
@@ -24,18 +25,25 @@ public:
             return ::djinni_generated::ViewGen::toCpp(r);
         }
     }
-    bool addView(const std::shared_ptr<::gearsbox::ViewGen> & c_view) override
+    bool addView(const std::string & c_id, ::gearsbox::ViewType c_type) override
     {
         @autoreleasepool {
-            auto r = [Handle::get() addView:(::djinni_generated::ViewGen::fromCpp(c_view))];
+            auto r = [Handle::get() addView:(::djinni::String::fromCpp(c_id))
+                                       type:(::djinni::Enum<::gearsbox::ViewType, GBViewType>::fromCpp(c_type))];
             return ::djinni::Bool::toCpp(r);
         }
     }
-    bool removeView(const std::shared_ptr<::gearsbox::ViewGen> & c_view) override
+    bool removeView(const std::string & c_id) override
     {
         @autoreleasepool {
-            auto r = [Handle::get() removeView:(::djinni_generated::ViewGen::fromCpp(c_view))];
+            auto r = [Handle::get() removeView:(::djinni::String::fromCpp(c_id))];
             return ::djinni::Bool::toCpp(r);
+        }
+    }
+    void addConstraint(const ::gearsbox::ViewConstraint & c_constraint) override
+    {
+        @autoreleasepool {
+            [Handle::get() addConstraint:(::djinni_generated::ViewConstraint::fromCpp(c_constraint))];
         }
     }
 };

@@ -6,24 +6,28 @@
 
 @interface GBViewConstraint : NSObject
 - (nonnull instancetype)initWithType:(GBConstraintType)type
+                              typeTo:(GBConstraintType)typeTo
                             viewFrom:(nonnull NSString *)viewFrom
                               viewTo:(nonnull NSString *)viewTo
-                          multiplier:(int32_t)multiplier
-                              offset:(int32_t)offset;
+                          multiplier:(float)multiplier
+                              offset:(float)offset;
 + (nonnull instancetype)viewConstraintWithType:(GBConstraintType)type
+                                        typeTo:(GBConstraintType)typeTo
                                       viewFrom:(nonnull NSString *)viewFrom
                                         viewTo:(nonnull NSString *)viewTo
-                                    multiplier:(int32_t)multiplier
-                                        offset:(int32_t)offset;
+                                    multiplier:(float)multiplier
+                                        offset:(float)offset;
 
 @property (nonatomic, readonly) GBConstraintType type;
+
+@property (nonatomic, readonly) GBConstraintType typeTo;
 
 @property (nonatomic, readonly, nonnull) NSString * viewFrom;
 
 @property (nonatomic, readonly, nonnull) NSString * viewTo;
 
-@property (nonatomic, readonly) int32_t multiplier;
+@property (nonatomic, readonly) float multiplier;
 
-@property (nonatomic, readonly) int32_t offset;
+@property (nonatomic, readonly) float offset;
 
 @end

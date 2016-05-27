@@ -3,8 +3,7 @@ djinni:gearsbox.djinni ui.djinni
 	sh ./run_djinni.sh
 
 ios_proj: djinni gearsbox.gyp ./deps/djinni/support-lib/support_lib.gyp 
-	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./gearsbox.gyp
-
+	deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./build_ios -Ideps/djinni/common.gypi ./gearsbox.gyp --root-target=gearsbox_objc
 ios: ios_proj
 	xcodebuild -workspace ios_project/djinni_sqlite.xcworkspace \
 		-scheme gearsbox \

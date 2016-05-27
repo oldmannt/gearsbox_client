@@ -20,7 +20,7 @@ public:
 
     virtual void removeViewGroup(const std::string & id) = 0;
 
-    virtual void getViewGroup(const std::string & id) = 0;
+    virtual std::shared_ptr<ViewGroupGen> getViewGroup(const std::string & id) = 0;
 };
 
 }  // namespace gearsbox

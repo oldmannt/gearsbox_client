@@ -34,8 +34,9 @@ private:
         ~JavaProxy();
 
         std::shared_ptr<::gearsbox::ViewGen> getView(const std::string & id) override;
-        bool addView(const std::shared_ptr<::gearsbox::ViewGen> & view) override;
-        bool removeView(const std::shared_ptr<::gearsbox::ViewGen> & view) override;
+        bool addView(const std::string & id, ::gearsbox::ViewType type) override;
+        bool removeView(const std::string & id) override;
+        void addConstraint(const ::gearsbox::ViewConstraint & constraint) override;
 
     private:
         friend ::djinni::JniInterface<::gearsbox::ViewGroupGen, ::djinni_generated::NativeViewGroupGen>;
@@ -43,8 +44,9 @@ private:
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("dyno/fun/gearsbox/ViewGroupGen") };
     const jmethodID method_getView { ::djinni::jniGetMethodID(clazz.get(), "getView", "(Ljava/lang/String;)Ldyno/fun/gearsbox/ViewGen;") };
-    const jmethodID method_addView { ::djinni::jniGetMethodID(clazz.get(), "addView", "(Ldyno/fun/gearsbox/ViewGen;)Z") };
-    const jmethodID method_removeView { ::djinni::jniGetMethodID(clazz.get(), "removeView", "(Ldyno/fun/gearsbox/ViewGen;)Z") };
+    const jmethodID method_addView { ::djinni::jniGetMethodID(clazz.get(), "addView", "(Ljava/lang/String;Ldyno/fun/gearsbox/ViewType;)Z") };
+    const jmethodID method_removeView { ::djinni::jniGetMethodID(clazz.get(), "removeView", "(Ljava/lang/String;)Z") };
+    const jmethodID method_addConstraint { ::djinni::jniGetMethodID(clazz.get(), "addConstraint", "(Ldyno/fun/gearsbox/ViewConstraint;)V") };
 };
 
 }  // namespace djinni_generated

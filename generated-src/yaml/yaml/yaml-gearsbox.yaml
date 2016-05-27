@@ -290,3 +290,32 @@ jni:
   header: '"NativeViewGroupGen.hpp"'
   typename: jobject
   typeSignature: 'Ldyno/fun/gearsbox/ViewGroupGen;'
+---
+name: gb_view_type
+typedef: 'enum'
+params: []
+prefix: gb_
+cpp:
+  typename: '::gearsbox::ViewType'
+  header: '"view_type.hpp"'
+  byValue: true
+objc:
+  typename: 'GBViewType'
+  pointer: false
+  hash: '%s.hash'
+  boxed: 'NSNumber'
+  header: '"GBViewType.h"'
+objcpp:
+  translator: '::djinni::Enum<::gearsbox::ViewType, GBViewType>'
+  header: '"DJIMarshal+Private.h"'
+java:
+  reference: true
+  typename: 'dyno.fun.gearsbox.ViewType'
+  generic: true
+  hash: '%s.hashCode()'
+  boxed: 'dyno.fun.gearsbox.ViewType'
+jni:
+  translator: '::djinni_generated::NativeViewType'
+  header: '"NativeViewType.hpp"'
+  typename: jobject
+  typeSignature: 'Ldyno/fun/gearsbox/ViewType;'

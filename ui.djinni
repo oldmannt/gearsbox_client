@@ -1,8 +1,8 @@
 view_frame = record{
-	x:i32;
-	y:i32;
-	w:i32;
-	h:i32;
+	x:f32;
+	y:f32;
+	w:f32;
+	h:f32;
 }
 
 constraint_type = enum {
@@ -16,31 +16,46 @@ constraint_type = enum {
 	CenterY;
 }
 
+view_type = enum {
+	VIEW_BASE;
+	VIEW_LABEL;
+	VIEW_INPUT;
+	VIEW_BTN;
+}
+
 view_constraint = record{
 	type:constraint_type;
+	type_to:constraint_type;
 	view_from:string;
 	view_to:string;
-	multiplier:i32;
-	offset:i32;
+	multiplier:f32;
+	offset:f32;
 }
 
 view_gen = interface +j +o {
+	getId():string;
 	setFrame(frame:view_frame);
 	getFrame():view_frame;
+	setBackgroundColor(a:f32,r:f32,g:f32,b:f32);
 	setVisiable(v:bool);
-	addSubView(view:view_gen):bool;
+
+	getSubView(id:string):view_gen;
+	addSubView(id:string, type:view_type):bool;
+	removeSubView(id:string):bool;
 	addConstraint(constraint:view_constraint);
 }
 
 view_group_gen = interface +j +o{
+	createView(id:string):view_gen
 	getView(id:string):view_gen;
-	addView(view:view_gen):bool;
-	removeView(view:view_gen):bool;
+	addView(id:string, type:view_type):bool;
+	removeView(id:string):bool;
+	addConstraint(constraint:view_constraint);
 }
 
 ui_injecter_gen = interface +c{
 	static instance():ui_injecter_gen;
 	inject(id:string, view_group:view_group_gen);
 	removeViewGroup(id:string);
-	getViewGroup(id:string);
+	getViewGroup(id:string):view_group_gen;
 }

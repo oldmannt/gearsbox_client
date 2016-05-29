@@ -3,10 +3,14 @@
 
 #pragma once
 
+#include <memory>
 #include <string>
 
 namespace gearsbox {
 
+class ViewEventHandler;
+enum class ViewType;
+struct ViewConstraint;
 struct ViewFrame;
 
 class ViewGen {
@@ -22,6 +26,18 @@ public:
     virtual void setBackgroundColor(float a, float r, float g, float b) = 0;
 
     virtual void setVisiable(bool v) = 0;
+
+    virtual std::shared_ptr<ViewGen> getSubView(const std::string & id) = 0;
+
+    virtual bool addSubView(const std::string & id, ViewType type) = 0;
+
+    virtual bool removeSubView(const std::string & id) = 0;
+
+    virtual void removeAllSubView() = 0;
+
+    virtual void addConstraint(const ViewConstraint & constraint) = 0;
+
+    virtual void setEventHandler(const std::shared_ptr<ViewEventHandler> & handler) = 0;
 };
 
 }  // namespace gearsbox

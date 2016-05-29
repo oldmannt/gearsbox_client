@@ -7,16 +7,11 @@
 
 namespace gearsbox {
 
-enum class ConstraintType : int {
-    NONE,
-    LEADING,
-    TRAILING,
-    TOP,
-    BOTTOM,
-    WIDTH,
-    HEIGHT,
-    CENTERX,
-    CENTERY,
+enum class ViewEvent : int {
+    EVENT_NONE,
+    EVENT_TAP,
+    EVENT_TEXT_CHANGED,
+    EVENT_BTN,
 };
 
 }  // namespace gearsbox
@@ -24,8 +19,8 @@ enum class ConstraintType : int {
 namespace std {
 
 template <>
-struct hash<::gearsbox::ConstraintType> {
-    size_t operator()(::gearsbox::ConstraintType type) const {
+struct hash<::gearsbox::ViewEvent> {
+    size_t operator()(::gearsbox::ViewEvent type) const {
         return std::hash<int>()(static_cast<int>(type));
     }
 };

@@ -5,6 +5,7 @@
 
 typedef NS_ENUM(NSInteger, GBConstraintType)
 {
+    GBConstraintTypeNone,
     GBConstraintTypeLeading,
     GBConstraintTypeTrailing,
     GBConstraintTypeTop,

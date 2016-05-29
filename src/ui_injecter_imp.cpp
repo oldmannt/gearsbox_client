@@ -21,24 +21,24 @@ UiInjecterImp::UiInjecterImp(){
 }
 
 UiInjecterImp::~UiInjecterImp(){
-    m_mapViewGroup.clear();
+    m_mapView.clear();
 }
 
-void UiInjecterImp::inject(const std::string &id, const std::shared_ptr<ViewGroupGen> &view_group){
-    m_mapViewGroup[id] = view_group;
+void UiInjecterImp::inject(const std::string &id, const std::shared_ptr<ViewGen> &view){
+    m_mapView[id] = view;
 }
 
-void UiInjecterImp::removeViewGroup(const std::string &id){
-    MapViewGroup::iterator it(m_mapViewGroup.find(id));
-    if (it==m_mapViewGroup.end()){
+void UiInjecterImp::removeView(const std::string &id){
+    MapView::iterator it(m_mapView.find(id));
+    if (it==m_mapView.end()){
         G_LOG_FC(LOG_ERROR, "id dont' exist, nothing to remove");
     }
-    m_mapViewGroup.erase(it);
+    m_mapView.erase(it);
 }
 
-std::shared_ptr<ViewGroupGen> UiInjecterImp::getViewGroup(const std::string &id){
-    MapViewGroup::iterator it(m_mapViewGroup.find(id));
-    if (it==m_mapViewGroup.end()){
+std::shared_ptr<ViewGen> UiInjecterImp::getView(const std::string &id){
+    MapView::iterator it(m_mapView.find(id));
+    if (it==m_mapView.end()){
         G_LOG_FC(LOG_ERROR, "id dont' exist, nothing finded");
     }
     return it->second;

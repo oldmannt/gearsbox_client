@@ -5,7 +5,10 @@
 #import "GBViewGen.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "GBViewConstraint+Private.h"
+#import "GBViewEventHandler+Private.h"
 #import "GBViewFrame+Private.h"
+#import "GBViewGen+Private.h"
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
 
@@ -50,6 +53,46 @@ public:
     {
         @autoreleasepool {
             [Handle::get() setVisiable:(::djinni::Bool::fromCpp(c_v))];
+        }
+    }
+    std::shared_ptr<::gearsbox::ViewGen> getSubView(const std::string & c_id) override
+    {
+        @autoreleasepool {
+            auto r = [Handle::get() getSubView:(::djinni::String::fromCpp(c_id))];
+            return ::djinni_generated::ViewGen::toCpp(r);
+        }
+    }
+    bool addSubView(const std::string & c_id, ::gearsbox::ViewType c_type) override
+    {
+        @autoreleasepool {
+            auto r = [Handle::get() addSubView:(::djinni::String::fromCpp(c_id))
+                                          type:(::djinni::Enum<::gearsbox::ViewType, GBViewType>::fromCpp(c_type))];
+            return ::djinni::Bool::toCpp(r);
+        }
+    }
+    bool removeSubView(const std::string & c_id) override
+    {
+        @autoreleasepool {
+            auto r = [Handle::get() removeSubView:(::djinni::String::fromCpp(c_id))];
+            return ::djinni::Bool::toCpp(r);
+        }
+    }
+    void removeAllSubView() override
+    {
+        @autoreleasepool {
+            [Handle::get() removeAllSubView];
+        }
+    }
+    void addConstraint(const ::gearsbox::ViewConstraint & c_constraint) override
+    {
+        @autoreleasepool {
+            [Handle::get() addConstraint:(::djinni_generated::ViewConstraint::fromCpp(c_constraint))];
+        }
+    }
+    void setEventHandler(const std::shared_ptr<::gearsbox::ViewEventHandler> & c_handler) override
+    {
+        @autoreleasepool {
+            [Handle::get() setEventHandler:(::djinni_generated::ViewEventHandler::fromCpp(c_handler))];
         }
     }
 };

@@ -24,6 +24,7 @@
       'all_dependent_settings': {
         'include_dirs': [
           './generated-src/objc',
+          './generated-src/cpp',
           "./interface",
         ]
       },
@@ -59,6 +60,7 @@
       'all_dependent_settings': {
         'include_dirs': [
           "./interface",
+          './generated-src/cpp',
         ]
       },
     },

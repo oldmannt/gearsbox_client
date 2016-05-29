@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 @class GBUiInjecterGen;
-@protocol GBViewGroupGen;
+@protocol GBViewGen;
 
 
 @interface GBUiInjecterGen : NSObject
@@ -11,10 +11,10 @@
 + (nullable GBUiInjecterGen *)instance;
 
 - (void)inject:(nonnull NSString *)id
-     viewGroup:(nullable id<GBViewGroupGen>)viewGroup;
+          view:(nullable id<GBViewGen>)view;
 
-- (void)removeViewGroup:(nonnull NSString *)id;
+- (nullable id<GBViewGen>)getView:(nonnull NSString *)id;
 
-- (nullable id<GBViewGroupGen>)getViewGroup:(nonnull NSString *)id;
+- (void)removeView:(nonnull NSString *)id;
 
 @end

@@ -13,4 +13,16 @@ public abstract class ViewGen {
     public abstract void setBackgroundColor(float a, float r, float g, float b);
 
     public abstract void setVisiable(boolean v);
+
+    public abstract ViewGen getSubView(String id);
+
+    public abstract boolean addSubView(String id, ViewType type);
+
+    public abstract boolean removeSubView(String id);
+
+    public abstract void removeAllSubView();
+
+    public abstract void addConstraint(ViewConstraint constraint);
+
+    public abstract void setEventHandler(ViewEventHandler handler);
 }

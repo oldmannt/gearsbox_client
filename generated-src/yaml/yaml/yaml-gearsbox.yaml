@@ -204,6 +204,122 @@ jni:
   typename: jobject
   typeSignature: 'Ldyno/fun/gearsbox/ViewConstraint;'
 ---
+name: gb_view_event
+typedef: 'enum'
+params: []
+prefix: gb_
+cpp:
+  typename: '::gearsbox::ViewEvent'
+  header: '"view_event.hpp"'
+  byValue: true
+objc:
+  typename: 'GBViewEvent'
+  pointer: false
+  hash: '%s.hash'
+  boxed: 'NSNumber'
+  header: '"GBViewEvent.h"'
+objcpp:
+  translator: '::djinni::Enum<::gearsbox::ViewEvent, GBViewEvent>'
+  header: '"DJIMarshal+Private.h"'
+java:
+  reference: true
+  typename: 'dyno.fun.gearsbox.ViewEvent'
+  generic: true
+  hash: '%s.hashCode()'
+  boxed: 'dyno.fun.gearsbox.ViewEvent'
+jni:
+  translator: '::djinni_generated::NativeViewEvent'
+  header: '"NativeViewEvent.hpp"'
+  typename: jobject
+  typeSignature: 'Ldyno/fun/gearsbox/ViewEvent;'
+---
+name: gb_view_event_handler
+typedef: 'interface +c'
+params: []
+prefix: gb_
+cpp:
+  typename: '::gearsbox::ViewEventHandler'
+  header: '"view_event_handler.hpp"'
+  byValue: false
+objc:
+  typename: 'GBViewEventHandler'
+  pointer: true
+  hash: '%s.hash'
+  boxed: 'GBViewEventHandler'
+  header: '"GBViewEventHandler.h"'
+objcpp:
+  translator: '::djinni_generated::ViewEventHandler'
+  header: '"GBViewEventHandler+Private.h"'
+java:
+  reference: true
+  typename: 'dyno.fun.gearsbox.ViewEventHandler'
+  generic: true
+  hash: '%s.hashCode()'
+  boxed: 'dyno.fun.gearsbox.ViewEventHandler'
+jni:
+  translator: '::djinni_generated::NativeViewEventHandler'
+  header: '"NativeViewEventHandler.hpp"'
+  typename: jobject
+  typeSignature: 'Ldyno/fun/gearsbox/ViewEventHandler;'
+---
+name: gb_view_event_param
+typedef: 'record'
+params: []
+prefix: gb_
+cpp:
+  typename: '::gearsbox::ViewEventParam'
+  header: '"view_event_param.hpp"'
+  byValue: false
+objc:
+  typename: 'GBViewEventParam'
+  pointer: true
+  hash: '%s.hash'
+  boxed: 'GBViewEventParam'
+  header: '"GBViewEventParam.h"'
+objcpp:
+  translator: '::djinni_generated::ViewEventParam'
+  header: '"GBViewEventParam+Private.h"'
+java:
+  reference: true
+  typename: 'dyno.fun.gearsbox.ViewEventParam'
+  generic: true
+  hash: '%s.hashCode()'
+  boxed: 'dyno.fun.gearsbox.ViewEventParam'
+jni:
+  translator: '::djinni_generated::NativeViewEventParam'
+  header: '"NativeViewEventParam.hpp"'
+  typename: jobject
+  typeSignature: 'Ldyno/fun/gearsbox/ViewEventParam;'
+---
+name: gb_view_factory_gen
+typedef: 'interface +o +j'
+params: []
+prefix: gb_
+cpp:
+  typename: '::gearsbox::ViewFactoryGen'
+  header: '"view_factory_gen.hpp"'
+  byValue: false
+objc:
+  typename: 'GBViewFactoryGen'
+  pointer: true
+  hash: '%s.hash'
+  boxed: 'GBViewFactoryGen'
+  header: '"GBViewFactoryGen.h"'
+objcpp:
+  translator: '::djinni_generated::ViewFactoryGen'
+  header: '"GBViewFactoryGen+Private.h"'
+java:
+  reference: true
+  typename: 'dyno.fun.gearsbox.ViewFactoryGen'
+  generic: true
+  hash: '%s.hashCode()'
+  boxed: 'dyno.fun.gearsbox.ViewFactoryGen'
+jni:
+  translator: '::djinni_generated::NativeViewFactoryGen'
+  header: '"NativeViewFactoryGen.hpp"'
+  typename: jobject
+  typeSignature: 'Ldyno/fun/gearsbox/ViewFactoryGen;'
+---
 name: gb_view_frame
 typedef: 'record'
 params: []
@@ -261,35 +377,6 @@ jni:
   header: '"NativeViewGen.hpp"'
   typename: jobject
   typeSignature: 'Ldyno/fun/gearsbox/ViewGen;'
----
-name: gb_view_group_gen
-typedef: 'interface +o +j'
-params: []
-prefix: gb_
-cpp:
-  typename: '::gearsbox::ViewGroupGen'
-  header: '"view_group_gen.hpp"'
-  byValue: false
-objc:
-  typename: 'GBViewGroupGen'
-  pointer: true
-  hash: '%s.hash'
-  boxed: 'GBViewGroupGen'
-  header: '"GBViewGroupGen.h"'
-objcpp:
-  translator: '::djinni_generated::ViewGroupGen'
-  header: '"GBViewGroupGen+Private.h"'
-java:
-  reference: true
-  typename: 'dyno.fun.gearsbox.ViewGroupGen'
-  generic: true
-  hash: '%s.hashCode()'
-  boxed: 'dyno.fun.gearsbox.ViewGroupGen'
-jni:
-  translator: '::djinni_generated::NativeViewGroupGen'
-  header: '"NativeViewGroupGen.hpp"'
-  typename: jobject
-  typeSignature: 'Ldyno/fun/gearsbox/ViewGroupGen;'
 ---
 name: gb_view_type
 typedef: 'enum'

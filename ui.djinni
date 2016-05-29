@@ -6,14 +6,15 @@ view_frame = record{
 }
 
 constraint_type = enum {
-	Leading;
-	Trailing;
-	Top;
-	Bottom;
-	Width;
-	Height;
-	CenterX;
-	CenterY;
+	None;		
+	Leading;	
+	Trailing;	
+	Top;		
+	Bottom;		
+	Width;		
+	Height;		
+	CenterX;	
+	CenterY;	
 }
 
 view_type = enum {
@@ -32,6 +33,24 @@ view_constraint = record{
 	offset:f32;
 }
 
+view_event = enum {
+	EVENT_NONE;
+	EVENT_TAP;
+	EVENT_TEXT_CHANGED;
+	EVENT_BTN;
+}
+
+view_event_param = record{
+	x:f32;
+	y:f32;
+	type:view_event;
+	text:string;
+}
+
+view_event_handler = interface +c {
+	handle(param:view_event_param,view:view_gen):bool;
+}
+
 view_gen = interface +j +o {
 	getId():string;
 	setFrame(frame:view_frame);
@@ -42,20 +61,19 @@ view_gen = interface +j +o {
 	getSubView(id:string):view_gen;
 	addSubView(id:string, type:view_type):bool;
 	removeSubView(id:string):bool;
+	removeAllSubView();
 	addConstraint(constraint:view_constraint);
+
+	setEventHandler(handler:view_event_handler);
 }
 
-view_group_gen = interface +j +o{
-	createView(id:string):view_gen
-	getView(id:string):view_gen;
-	addView(id:string, type:view_type):bool;
-	removeView(id:string):bool;
-	addConstraint(constraint:view_constraint);
+view_factory_gen = interface +j +o{
+	createView(id:string, type:view_type):view_gen;
 }
 
 ui_injecter_gen = interface +c{
 	static instance():ui_injecter_gen;
-	inject(id:string, view_group:view_group_gen);
-	removeViewGroup(id:string);
-	getViewGroup(id:string):view_group_gen;
+	inject(id:string, view:view_gen);
+	getView(id:string):view_gen;
+	removeView(id:string);
 }

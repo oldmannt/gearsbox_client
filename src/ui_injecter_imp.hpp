@@ -10,7 +10,7 @@
 #define ui_injecter_hpp
 
 #include "ui_injecter_gen.hpp"
-#include "view_group_gen.hpp"
+#include "view_gen.hpp"
 
 #include <map>
 namespace gearsbox {
@@ -20,14 +20,14 @@ public:
     UiInjecterImp();
     virtual ~UiInjecterImp();
     
-    virtual void inject(const std::string & id, const std::shared_ptr<ViewGroupGen> & view_group);
-    virtual void removeViewGroup(const std::string & id);
-    virtual std::shared_ptr<ViewGroupGen> getViewGroup(const std::string & id);
+    virtual void inject(const std::string & id, const std::shared_ptr<ViewGen> & view);
+    virtual void removeView(const std::string & id);
+    virtual std::shared_ptr<ViewGen> getView(const std::string & id);
     
 private:
-    typedef std::map<std::string, std::shared_ptr<ViewGroupGen>> MapViewGroup;
+    typedef std::map<std::string, std::shared_ptr<ViewGen>> MapView;
     
-    MapViewGroup m_mapViewGroup;
+    MapView m_mapView;
 };
     
 }

@@ -7,7 +7,7 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "GBUiInjecterGen+Private.h"
-#import "GBViewGroupGen+Private.h"
+#import "GBViewGen+Private.h"
 #include <exception>
 #include <utility>
 
@@ -39,23 +39,23 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 }
 
 - (void)inject:(nonnull NSString *)id
-     viewGroup:(nullable id<GBViewGroupGen>)viewGroup {
+          view:(nullable id<GBViewGen>)view {
     try {
         _cppRefHandle.get()->inject(::djinni::String::toCpp(id),
-                                    ::djinni_generated::ViewGroupGen::toCpp(viewGroup));
+                                    ::djinni_generated::ViewGen::toCpp(view));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)removeViewGroup:(nonnull NSString *)id {
+- (nullable id<GBViewGen>)getView:(nonnull NSString *)id {
     try {
-        _cppRefHandle.get()->removeViewGroup(::djinni::String::toCpp(id));
+        auto r = _cppRefHandle.get()->getView(::djinni::String::toCpp(id));
+        return ::djinni_generated::ViewGen::fromCpp(r);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nullable id<GBViewGroupGen>)getViewGroup:(nonnull NSString *)id {
+- (void)removeView:(nonnull NSString *)id {
     try {
-        auto r = _cppRefHandle.get()->getViewGroup(::djinni::String::toCpp(id));
-        return ::djinni_generated::ViewGroupGen::fromCpp(r);
+        _cppRefHandle.get()->removeView(::djinni::String::toCpp(id));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -8,7 +8,7 @@
 
 namespace gearsbox {
 
-class ViewGroupGen;
+class ViewGen;
 
 class UiInjecterGen {
 public:
@@ -16,11 +16,11 @@ public:
 
     static std::shared_ptr<UiInjecterGen> instance();
 
-    virtual void inject(const std::string & id, const std::shared_ptr<ViewGroupGen> & view_group) = 0;
+    virtual void inject(const std::string & id, const std::shared_ptr<ViewGen> & view) = 0;
 
-    virtual void removeViewGroup(const std::string & id) = 0;
+    virtual std::shared_ptr<ViewGen> getView(const std::string & id) = 0;
 
-    virtual std::shared_ptr<ViewGroupGen> getViewGroup(const std::string & id) = 0;
+    virtual void removeView(const std::string & id) = 0;
 };
 
 }  // namespace gearsbox

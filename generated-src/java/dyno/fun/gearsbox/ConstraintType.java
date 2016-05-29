@@ -4,6 +4,7 @@
 package dyno.fun.gearsbox;
 
 public enum ConstraintType {
+    NONE,
     LEADING,
     TRAILING,
     TOP,

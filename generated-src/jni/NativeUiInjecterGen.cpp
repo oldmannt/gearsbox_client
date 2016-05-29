@@ -4,7 +4,7 @@
 #include "NativeUiInjecterGen.hpp"  // my header
 #include "Marshal.hpp"
 #include "NativeUiInjecterGen.hpp"
-#include "NativeViewGroupGen.hpp"
+#include "NativeViewGen.hpp"
 
 namespace djinni_generated {
 
@@ -30,33 +30,33 @@ CJNIEXPORT jobject JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_instance(JNIEnv*
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1inject(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id, jobject j_viewGroup)
+CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1inject(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id, jobject j_view)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::UiInjecterGen>(nativeRef);
         ref->inject(::djinni::String::toCpp(jniEnv, j_id),
-                    ::djinni_generated::NativeViewGroupGen::toCpp(jniEnv, j_viewGroup));
+                    ::djinni_generated::NativeViewGen::toCpp(jniEnv, j_view));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1removeViewGroup(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
+CJNIEXPORT jobject JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1getView(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::UiInjecterGen>(nativeRef);
-        ref->removeViewGroup(::djinni::String::toCpp(jniEnv, j_id));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
-}
-
-CJNIEXPORT jobject JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1getViewGroup(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
-        const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::UiInjecterGen>(nativeRef);
-        auto r = ref->getViewGroup(::djinni::String::toCpp(jniEnv, j_id));
-        return ::djinni::release(::djinni_generated::NativeViewGroupGen::fromCpp(jniEnv, r));
+        auto r = ref->getView(::djinni::String::toCpp(jniEnv, j_id));
+        return ::djinni::release(::djinni_generated::NativeViewGen::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT void JNICALL Java_dyno_fun_gearsbox_UiInjecterGen_00024CppProxy_native_1removeView(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_id)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::gearsbox::UiInjecterGen>(nativeRef);
+        ref->removeView(::djinni::String::toCpp(jniEnv, j_id));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
 }  // namespace djinni_generated

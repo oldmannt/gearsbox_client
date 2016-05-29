@@ -6,11 +6,11 @@ package dyno.fun.gearsbox;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class UiInjecterGen {
-    public abstract void inject(String id, ViewGroupGen viewGroup);
+    public abstract void inject(String id, ViewGen view);
 
-    public abstract void removeViewGroup(String id);
+    public abstract ViewGen getView(String id);
 
-    public abstract ViewGroupGen getViewGroup(String id);
+    public abstract void removeView(String id);
 
     public static native UiInjecterGen instance();
 
@@ -38,27 +38,27 @@ public abstract class UiInjecterGen {
         }
 
         @Override
-        public void inject(String id, ViewGroupGen viewGroup)
+        public void inject(String id, ViewGen view)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_inject(this.nativeRef, id, viewGroup);
+            native_inject(this.nativeRef, id, view);
         }
-        private native void native_inject(long _nativeRef, String id, ViewGroupGen viewGroup);
+        private native void native_inject(long _nativeRef, String id, ViewGen view);
 
         @Override
-        public void removeViewGroup(String id)
+        public ViewGen getView(String id)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_removeViewGroup(this.nativeRef, id);
+            return native_getView(this.nativeRef, id);
         }
-        private native void native_removeViewGroup(long _nativeRef, String id);
+        private native ViewGen native_getView(long _nativeRef, String id);
 
         @Override
-        public ViewGroupGen getViewGroup(String id)
+        public void removeView(String id)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getViewGroup(this.nativeRef, id);
+            native_removeView(this.nativeRef, id);
         }
-        private native ViewGroupGen native_getViewGroup(long _nativeRef, String id);
+        private native void native_removeView(long _nativeRef, String id);
     }
 }

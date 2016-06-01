@@ -61,17 +61,29 @@ class GBViewImp: GBViewGen {
         return nil
     }
     
-    @objc public func addSubView(id: String, type: GBViewType) -> Bool{
+    @objc public func addSubView(id: String, type: GBViewType) -> GBViewGen?{
+        if m_subView[id] != nil {
+            GBLogGen.instance()?.log(GBLogGenLOGFILE|GBLogGenLOGCONSOLE, lev: GBLogGenLOGERROR,
+                                     msg: "addView failed aready exist id: \(id) \(#file) \(#function) \(#line) ")
+            return nil;
+        }
+        
+        if id == m_id {
+            GBLogGen.instance()?.log(GBLogGenLOGFILE|GBLogGenLOGCONSOLE, lev: GBLogGenLOGERROR,
+                                     msg: "addView failed this parent id: \(id) \(#file) \(#function) \(#line) ")
+            return nil;
+        }
         let view:UIView? = createView(type)
         if nil == view {
             GBLogGen.instance()?.log(GBLogGenLOGFILE|GBLogGenLOGCONSOLE, lev: GBLogGenLOGERROR,
                                      msg: "addView failed type: \(type) \(#file) \(#function) \(#line) ")
-            return false
+            return nil
         }
         
+        m_view.addSubview(view!)
         let view_gen:GBViewImp = GBViewImp(id: id, view:view!,controller: m_controller)
         m_subView[id] = view_gen
-        return true
+        return view_gen
     }
     
     @objc public func removeSubView(id: String) -> Bool{
@@ -103,12 +115,20 @@ class GBViewImp: GBViewGen {
     }
     
     @objc public func addConstraint(constraint: GBViewConstraint){
+        let typestr = ["None    ","Leading ","Trailing","Top     ","Bottom  ","Width   ","Height  ","CenterX ","CenterY "]
+        print("constraint: viewFrome:\(constraint.viewFrom) viewTo:\(constraint.viewTo) type:\(typestr[constraint.type.rawValue]) typeTo:\(typestr[constraint.typeTo.rawValue]) multiplier:\(constraint.multiplier) offset:\(constraint.offset)")
         let view:GBViewImp? = m_subView[constraint.viewFrom]
-        let toview:GBViewImp? = m_subView[constraint.viewTo]
         if view == nil{
             GBLogGen.instance()?.log(GBLogGenLOGFILE|GBLogGenLOGCONSOLE, lev: GBLogGenLOGERROR,
                                      msg: "viewFrome nil \(#file) \(#function) \(#line) ")
             return
+        }
+        
+        var toview:GBViewImp?
+        if GBViewConstraintParent == constraint.viewTo{
+            toview = self
+        }else{
+            toview = m_subView[constraint.viewTo]
         }
         
         let multi:CGFloat = CGFloat(constraint.multiplier)
@@ -125,8 +145,9 @@ class GBViewImp: GBViewGen {
             return
         }
         
-        m_view.addConstraint(NSLayoutConstraint(item: m_view, attribute: attr!, relatedBy: .Equal,
-            toItem: toview, attribute: toattr!, multiplier: multi, constant: offset))
+        view!.getUIView().translatesAutoresizingMaskIntoConstraints = false
+        m_view.addConstraint(NSLayoutConstraint(item: view!.getUIView(), attribute: attr!, relatedBy: .Equal,
+            toItem: toview!.getUIView(), attribute: toattr!, multiplier: multi, constant: offset))
 
     }
     
@@ -199,17 +220,16 @@ class GBViewImp: GBViewGen {
     }
     
     private func createView(type:GBViewType) -> UIView?{
-        var view:UIView
         switch type {
         case GBViewType.VIEWBASE:
-            view = UIView()
-            return view
+            return UIView()
         case GBViewType.VIEWLABEL:
-            view = UILabel()
-            return view
+            return UILabel()
         case GBViewType.VIEWINPUT:
-            view = UITextField()
-            return view
+            let view:UITextField = UITextField()
+            view.placeholder="  Enter here"
+            view.borderStyle = UITextBorderStyle.RoundedRect
+           return view
         default: break
         }
         return nil

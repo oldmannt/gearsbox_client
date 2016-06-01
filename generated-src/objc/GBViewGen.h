@@ -26,8 +26,8 @@
 
 - (nullable id<GBViewGen>)getSubView:(nonnull NSString *)id;
 
-- (BOOL)addSubView:(nonnull NSString *)id
-              type:(GBViewType)type;
+- (nullable id<GBViewGen>)addSubView:(nonnull NSString *)id
+                                type:(GBViewType)type;
 
 - (BOOL)removeSubView:(nonnull NSString *)id;
 

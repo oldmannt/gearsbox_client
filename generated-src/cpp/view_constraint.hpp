@@ -10,6 +10,8 @@
 namespace gearsbox {
 
 struct ViewConstraint final {
+
+    static std::string const PARENT;
     ConstraintType type;
     ConstraintType type_to;
     std::string view_from;

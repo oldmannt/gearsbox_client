@@ -16,7 +16,7 @@ public abstract class ViewGen {
 
     public abstract ViewGen getSubView(String id);
 
-    public abstract boolean addSubView(String id, ViewType type);
+    public abstract ViewGen addSubView(String id, ViewType type);
 
     public abstract boolean removeSubView(String id);
 

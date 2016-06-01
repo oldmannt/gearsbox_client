@@ -31,3 +31,5 @@
 @property (nonatomic, readonly) float offset;
 
 @end
+
+extern NSString * __nonnull const GBViewConstraintParent;

@@ -29,7 +29,7 @@ public:
 
     virtual std::shared_ptr<ViewGen> getSubView(const std::string & id) = 0;
 
-    virtual bool addSubView(const std::string & id, ViewType type) = 0;
+    virtual std::shared_ptr<ViewGen> addSubView(const std::string & id, ViewType type) = 0;
 
     virtual bool removeSubView(const std::string & id) = 0;
 

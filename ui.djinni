@@ -18,13 +18,14 @@ constraint_type = enum {
 }
 
 view_type = enum {
-	VIEW_BASE;
-	VIEW_LABEL;
-	VIEW_INPUT;
-	VIEW_BTN;
+	base;
+	label;
+	input;
+	btn;
 }
 
 view_constraint = record{
+	const parent:string = "parent";
 	type:constraint_type;
 	type_to:constraint_type;
 	view_from:string;
@@ -33,11 +34,31 @@ view_constraint = record{
 	offset:f32;
 }
 
+view_boarder = enum{
+	None;
+	Line;
+	Bezel;
+	RoundedRect;
+}
+
+view_conf = record{
+	id:string;
+	frame:view_frame;
+	boardder:
+	text:string
+	constraints:list<view_constraint>
+	subviews:map<view_conf>
+}
+
+ui_conf = interface +c {
+	getConstraint(name:string):view_constraint
+	getViewConf(id:string):view_conf
+}
+
 view_event = enum {
-	EVENT_NONE;
-	EVENT_TAP;
-	EVENT_TEXT_CHANGED;
-	EVENT_BTN;
+	None;
+	Tap;
+	TextChange;
 }
 
 view_event_param = record{
@@ -59,7 +80,7 @@ view_gen = interface +j +o {
 	setVisiable(v:bool);
 
 	getSubView(id:string):view_gen;
-	addSubView(id:string, type:view_type):bool;
+	addSubView(id:string, type:view_type):view_gen;
 	removeSubView(id:string):bool;
 	removeAllSubView();
 	addConstraint(constraint:view_constraint);

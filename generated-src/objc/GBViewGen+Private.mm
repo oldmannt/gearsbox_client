@@ -62,12 +62,12 @@ public:
             return ::djinni_generated::ViewGen::toCpp(r);
         }
     }
-    bool addSubView(const std::string & c_id, ::gearsbox::ViewType c_type) override
+    std::shared_ptr<::gearsbox::ViewGen> addSubView(const std::string & c_id, ::gearsbox::ViewType c_type) override
     {
         @autoreleasepool {
             auto r = [Handle::get() addSubView:(::djinni::String::fromCpp(c_id))
                                           type:(::djinni::Enum<::gearsbox::ViewType, GBViewType>::fromCpp(c_type))];
-            return ::djinni::Bool::toCpp(r);
+            return ::djinni_generated::ViewGen::toCpp(r);
         }
     }
     bool removeSubView(const std::string & c_id) override

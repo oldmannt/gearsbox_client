@@ -4,6 +4,8 @@
 #import "GBViewConstraint.h"
 
 
+NSString * __nonnull const GBViewConstraintParent = @"parent";
+
 @implementation GBViewConstraint
 
 - (nonnull instancetype)initWithType:(GBConstraintType)type
